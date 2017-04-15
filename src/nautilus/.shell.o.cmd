@@ -3,9 +3,7 @@ cmd_src/nautilus/shell.o := gcc -Wp,-MD,src/nautilus/.shell.o.d   -D__NAUTILUS__
 deps_src/nautilus/shell.o := \
   src/nautilus/shell.c \
     $(wildcard include/config/palacios.h) \
-    $(wildcard include/config/real/mode/interface.h) \
-    $(wildcard include/config/ext2/filesystem/driver.h) \
-    $(wildcard include/config/palacios/embed.h) \
+    $(wildcard include/config/palacios/embedded/vm/img.h) \
   include/autoconf.h \
     $(wildcard include/config/x86/64/host.h) \
     $(wildcard include/config/xeon/phi.h) \
@@ -30,6 +28,7 @@ deps_src/nautilus/shell.o := \
     $(wildcard include/config/aperiodic/dynamic/lifetime.h) \
     $(wildcard include/config/aperiodic/lottery.h) \
     $(wildcard include/config/aperiodic/round/robin.h) \
+    $(wildcard include/config/real/mode/interface.h) \
     $(wildcard include/config/fpu/save.h) \
     $(wildcard include/config/kick/schedule.h) \
     $(wildcard include/config/halt/while/idle.h) \
@@ -55,6 +54,8 @@ deps_src/nautilus/shell.o := \
     $(wildcard include/config/virtio/pci.h) \
     $(wildcard include/config/ramdisk.h) \
     $(wildcard include/config/ata.h) \
+    $(wildcard include/config/ext2/filesystem/driver.h) \
+  include/nautilus/libccompat.h \
   include/nautilus/nautilus.h \
   include/nautilus/percpu.h \
   /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stddef.h \
@@ -87,18 +88,15 @@ deps_src/nautilus/shell.o := \
   include/nautilus/barrier.h \
   include/nautilus/numa.h \
   include/arch/x64/main.h \
+  include/lua/lua.h \
+  include/lua/luaconf.h \
+  include/lua/lualib.h \
+  include/lua/lauxlib.h \
+  include/lua/libdump.h \
   include/nautilus/shell.h \
   include/nautilus/thread.h \
   include/nautilus/scheduler.h \
-  include/nautilus/dev.h \
-  include/nautilus/blkdev.h \
-  include/nautilus/netdev.h \
-  include/nautilus/chardev.h \
-  include/nautilus/fs.h \
-  include/fs/ext2/ext2.h \
-  include/nautilus/cpuid.h \
-  include/nautilus/backtrace.h \
-  include/test/ipi.h \
+  include/dev/lua_script.h \
 
 src/nautilus/shell.o: $(deps_src/nautilus/shell.o)
 

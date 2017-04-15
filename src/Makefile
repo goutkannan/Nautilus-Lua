@@ -5,6 +5,7 @@ obj-y += \
 	dev/ \
         fs/  \
 	acpi/ \
+lua_src/ \
 	test/  
 
 obj-$(NAUT_CONFIG_CXX_SUPPORT) += cxx/

@@ -89,7 +89,7 @@
 #include <dev/vesa.h>
 #endif
 
-#include<dev/lua_script.h>
+//#include<dev/lua_script.h>
 extern spinlock_t printk_lock;
 
 
@@ -384,10 +384,13 @@ init (unsigned long mbd,
 #endif
 
     launch_vmm_environment();
+/*
     char *lua_script=read_lua_script();
     printk("%s",lua_script);
-    //nk_launch_shell("root-shell",0);
-    nk_launch_shell(lua_script,0);
+ */
+
+    nk_launch_shell("root-shell",0);
+   // nk_launch_shell(lua_script,0);
 
     runtime_init();
 

@@ -528,4 +528,37 @@ free (void * addr)
     spin_unlock_irq_restore(&zone->lock, flags);
     block_hash_free_entry(hdr);
 }
+/* LUA unimplemented realloc */
+void *realloc(void *ptr, size_t size)
+{
+
+    struct kmem_block_hdr *hdr;
+    hdr = block_hash_find_entry(ptr);
+    size_t old_size;
+    void *temp = NULL;
+    if (!hdr) { 
+       
+      KMEM_DEBUG("REALLOC:|  Failed to find entry for block %p\n",ptr);
+      return NULL;
+    }
+   old_size = 1 << hdr->order;
+   temp = malloc(size);
+   if(!temp){
+    
+	printk("\nRealloc: Failed...");
+        return NULL;
+   }
+   if(old_size >= size)
+   {
+	memcpy(temp, ptr, size);
+   } 
+   else
+   {
+	memcpy(temp, ptr, old_size);
+   }
+   free(ptr);
+   return temp; 
+}
+
+
 

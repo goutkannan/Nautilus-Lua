@@ -1,2 +1,2 @@
-Hello
-This is lua script
+print("From code")
+

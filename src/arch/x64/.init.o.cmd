@@ -134,7 +134,6 @@ deps_src/arch/x64/init.o := \
   include/nautilus/bits.h \
   include/dev/i8254.h \
   include/dev/vga.h \
-  include/dev/lua_script.h \
 
 src/arch/x64/init.o: $(deps_src/arch/x64/init.o)
 
