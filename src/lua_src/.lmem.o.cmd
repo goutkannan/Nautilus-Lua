@@ -1,4 +1,4 @@
-cmd_src/lua_src/lmem.o := gcc -Wp,-MD,src/lua_src/.lmem.o.d   -D__NAUTILUS__ -Iinclude  -include include/autoconf.h -D__NAUTILUS__ -O2 -fno-omit-frame-pointer -ffreestanding -fno-stack-protector -fno-strict-aliasing -fno-strict-overflow -mno-red-zone -mcmodel=large -Wall -Wno-unused-function -Wno-unused-variable -Wno-frame-address -fno-common -std=gnu99  -Wno-unused-but-set-variable -Wstrict-overflow=5 -fgnu89-inline -m64  -Wno-pointer-sign    -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(lmem)"  -D"KBUILD_MODNAME=KBUILD_STR(lmem)" -c -o src/lua_src/lmem.o src/lua_src/lmem.c
+cmd_src/lua_src/lmem.o := gcc -Wp,-MD,src/lua_src/.lmem.o.d   -D__NAUTILUS__ -Iinclude  -include include/autoconf.h -D__NAUTILUS__ -O2 -fno-omit-frame-pointer -ffreestanding -fno-stack-protector -fno-strict-aliasing -fno-strict-overflow -mno-red-zone -mcmodel=large -Wall -Wno-unused-function -Wno-unused-variable -Wno-frame-address -fno-common -std=gnu99  -Wno-unused-but-set-variable -Wstrict-overflow=5  -fgnu89-inline -m64  -Wno-pointer-sign    -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(lmem)"  -D"KBUILD_MODNAME=KBUILD_STR(lmem)" -c -o src/lua_src/lmem.o src/lua_src/lmem.c
 
 deps_src/lua_src/lmem.o := \
   src/lua_src/lmem.c \
@@ -54,6 +54,8 @@ deps_src/lua_src/lmem.o := \
     $(wildcard include/config/ramdisk.h) \
     $(wildcard include/config/ata.h) \
     $(wildcard include/config/ext2/filesystem/driver.h) \
+    $(wildcard include/config/load/lua.h) \
+    $(wildcard include/config/lua/test.h) \
   include/nautilus/libccompat.h \
   include/nautilus/nautilus.h \
   include/nautilus/percpu.h \

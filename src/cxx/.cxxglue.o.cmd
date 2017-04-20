@@ -54,6 +54,8 @@ deps_src/cxx/cxxglue.o := \
     $(wildcard include/config/ramdisk.h) \
     $(wildcard include/config/ata.h) \
     $(wildcard include/config/ext2/filesystem/driver.h) \
+    $(wildcard include/config/load/lua.h) \
+    $(wildcard include/config/lua/test.h) \
   include/nautilus/naut_types.h \
   include/nautilus/cxxglue.h \
 

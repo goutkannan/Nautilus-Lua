@@ -680,3 +680,19 @@ source "src/dev/Kconfig"
 source "src/fs/Kconfig"
 
 
+menu "Lua interpreter support "
+
+    config LOAD_LUA
+        bool "Lua interpreter for nautilus"
+        default n
+        help
+	  Lua 5.2.4 ported for nautilus 
+
+    config LUA_TEST
+	bool "Test framework for nautilus functions"
+	default n
+	help 
+	  Nautilus function are made available to lua externally 
+
+endmenu
+

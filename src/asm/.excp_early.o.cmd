@@ -55,6 +55,8 @@ deps_src/asm/excp_early.o := \
     $(wildcard include/config/ramdisk.h) \
     $(wildcard include/config/ata.h) \
     $(wildcard include/config/ext2/filesystem/driver.h) \
+    $(wildcard include/config/load/lua.h) \
+    $(wildcard include/config/lua/test.h) \
   include/nautilus/idt.h \
   include/asm/lowlevel.h \
   include/nautilus/thread.h \

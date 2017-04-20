@@ -336,7 +336,8 @@ CFLAGS:=   $(COMMON_FLAGS) \
 		   -fno-common \
 		   -std=gnu99 \
 		    $(call cc-option, -Wno-unused-but-set-variable,) \
-	           -Wstrict-overflow=5
+	           -Wstrict-overflow=5 
+		   
 		   #-mno-3dnow \
 		   #-Werror \
 		   #-Wmissing-prototypes \
@@ -685,6 +686,12 @@ nautilus: $(BIN_NAME)
 isoimage: nautilus
 	cp $(BIN_NAME) iso/boot
 	$(GRUBMKRESCUE) -o $(ISO_NAME) iso
+
+
+lua-dev: nautilus
+	
+	@python parse_gdb.py 
+	$(call if_changed_rule,nautilus__)
 
 nautilus.asm: $(BIN_NAME)
 	$(OBJDUMP) --disassemble $< > $@

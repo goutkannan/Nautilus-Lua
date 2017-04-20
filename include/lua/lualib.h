@@ -41,8 +41,17 @@ LUAMOD_API int (luaopen_debug) (lua_State *L);
 #define LUA_LOADLIBNAME	"package"
 LUAMOD_API int (luaopen_package) (lua_State *L);
 
+#ifdef NAUT_CONFIG_LUA_TEST
 #define  LUA_NAUTLIBNAME  "naut"
 LUAMOD_API int (luaopen_naut) (lua_State *L);
+#endif
+
+
+
+
+
+
+
 
 
 

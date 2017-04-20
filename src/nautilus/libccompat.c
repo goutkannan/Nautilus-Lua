@@ -690,7 +690,7 @@ double strtod(const char *string, char **endPtr)
 //    char **endPtr;	
 	/* If non-NULL, store terminating character's
 				 * address here. */
-
+    int errno=0;
     int sign, expSign = FALSE;
     double fraction, dblExp, *d;
     register const char *p;

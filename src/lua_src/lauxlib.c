@@ -10,7 +10,7 @@
 //#include <stdio.h>
 //#include <stdlib.h>
 //#include <string.h>
-int errno = 0;
+//int errno = 0;
 #include <nautilus/libccompat.h>
 #define LIB_LUA
 
@@ -46,6 +46,8 @@ int errno = 0;
 ** search for 'objidx' in table at index -1.
 ** return 1 + string at top if find a good name.
 */
+int errno=0;
+
 static int findfield (lua_State *L, int objidx, int level) {
   if (level == 0 || !lua_istable(L, -1))
     return 0;  /* not found */

@@ -1,4 +1,4 @@
-cmd_src/nautilus/msr.o := gcc -Wp,-MD,src/nautilus/.msr.o.d   -D__NAUTILUS__ -Iinclude  -include include/autoconf.h -D__NAUTILUS__ -O2 -fno-omit-frame-pointer -ffreestanding -fno-stack-protector -fno-strict-aliasing -fno-strict-overflow -mno-red-zone -mcmodel=large -Wall -Wno-unused-function -Wno-unused-variable -Wno-frame-address -fno-common -std=gnu99  -Wno-unused-but-set-variable -Wstrict-overflow=5 -fgnu89-inline -m64  -Wno-pointer-sign    -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(msr)"  -D"KBUILD_MODNAME=KBUILD_STR(msr)" -c -o src/nautilus/msr.o src/nautilus/msr.c
+cmd_src/nautilus/msr.o := gcc -Wp,-MD,src/nautilus/.msr.o.d   -D__NAUTILUS__ -Iinclude  -include include/autoconf.h -D__NAUTILUS__ -O2 -fno-omit-frame-pointer -ffreestanding -fno-stack-protector -fno-strict-aliasing -fno-strict-overflow -mno-red-zone -mcmodel=large -Wall -Wno-unused-function -Wno-unused-variable -Wno-frame-address -fno-common -std=gnu99  -Wno-unused-but-set-variable -Wstrict-overflow=5  -fgnu89-inline -m64  -Wno-pointer-sign    -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(msr)"  -D"KBUILD_MODNAME=KBUILD_STR(msr)" -c -o src/nautilus/msr.o src/nautilus/msr.c
 
 deps_src/nautilus/msr.o := \
   src/nautilus/msr.c \
@@ -54,6 +54,8 @@ deps_src/nautilus/msr.o := \
     $(wildcard include/config/ramdisk.h) \
     $(wildcard include/config/ata.h) \
     $(wildcard include/config/ext2/filesystem/driver.h) \
+    $(wildcard include/config/load/lua.h) \
+    $(wildcard include/config/lua/test.h) \
   include/nautilus/msr.h \
   include/nautilus/naut_types.h \
 

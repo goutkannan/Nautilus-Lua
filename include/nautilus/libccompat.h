@@ -123,11 +123,9 @@ struct timespec {
 #define _IONBF  2               /* setvbuf should set unbuffered */
 #define L_tmpnam	1024
 #define CLOCKS_PER_SEC	1000000l /* found from time.h*/
-#ifdef LIBCCOMPAT
-extern int errno;
-#else 
-extern int errno;
-#endif 
+
+ extern int errno;
+
 
 
 

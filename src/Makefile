@@ -5,9 +5,11 @@ obj-y += \
 	dev/ \
         fs/  \
 	acpi/ \
-lua_src/ \
-	test/  
+	test/ \
 
+ifdef NAUT_CONFIG_LOAD_LUA
+obj-y += lua_src/
+endif	
 obj-$(NAUT_CONFIG_CXX_SUPPORT) += cxx/
 obj-$(NAUT_CONFIG_LEGION_RT) += legion_runtime/
 obj-$(NAUT_CONFIG_NDPC_RT) +=

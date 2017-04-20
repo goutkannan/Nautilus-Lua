@@ -55,6 +55,8 @@ deps_src/arch/x64/asm/boot.o := \
     $(wildcard include/config/ramdisk.h) \
     $(wildcard include/config/ata.h) \
     $(wildcard include/config/ext2/filesystem/driver.h) \
+    $(wildcard include/config/load/lua.h) \
+    $(wildcard include/config/lua/test.h) \
   include/asm/lowlevel.h \
 
 src/arch/x64/asm/boot.o: $(deps_src/arch/x64/asm/boot.o)

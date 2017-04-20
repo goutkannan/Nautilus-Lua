@@ -1,4 +1,4 @@
-cmd_src/nautilus/netdev.o := gcc -Wp,-MD,src/nautilus/.netdev.o.d   -D__NAUTILUS__ -Iinclude  -include include/autoconf.h -D__NAUTILUS__ -O2 -fno-omit-frame-pointer -ffreestanding -fno-stack-protector -fno-strict-aliasing -fno-strict-overflow -mno-red-zone -mcmodel=large -Wall -Wno-unused-function -Wno-unused-variable -Wno-frame-address -fno-common -std=gnu99  -Wno-unused-but-set-variable -Wstrict-overflow=5 -fgnu89-inline -m64  -Wno-pointer-sign    -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(netdev)"  -D"KBUILD_MODNAME=KBUILD_STR(netdev)" -c -o src/nautilus/netdev.o src/nautilus/netdev.c
+cmd_src/nautilus/netdev.o := gcc -Wp,-MD,src/nautilus/.netdev.o.d   -D__NAUTILUS__ -Iinclude  -include include/autoconf.h -D__NAUTILUS__ -O2 -fno-omit-frame-pointer -ffreestanding -fno-stack-protector -fno-strict-aliasing -fno-strict-overflow -mno-red-zone -mcmodel=large -Wall -Wno-unused-function -Wno-unused-variable -Wno-frame-address -fno-common -std=gnu99  -Wno-unused-but-set-variable -Wstrict-overflow=5  -fgnu89-inline -m64  -Wno-pointer-sign    -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(netdev)"  -D"KBUILD_MODNAME=KBUILD_STR(netdev)" -c -o src/nautilus/netdev.o src/nautilus/netdev.c
 
 deps_src/nautilus/netdev.o := \
   src/nautilus/netdev.c \
@@ -55,6 +55,8 @@ deps_src/nautilus/netdev.o := \
     $(wildcard include/config/ramdisk.h) \
     $(wildcard include/config/ata.h) \
     $(wildcard include/config/ext2/filesystem/driver.h) \
+    $(wildcard include/config/load/lua.h) \
+    $(wildcard include/config/lua/test.h) \
   include/nautilus/nautilus.h \
   include/nautilus/percpu.h \
   /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stddef.h \

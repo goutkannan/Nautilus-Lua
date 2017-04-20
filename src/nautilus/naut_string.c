@@ -26,232 +26,232 @@
 #include <nautilus/mm.h>
 
 unsigned char _ctype[] = {
-_C,_C,_C,_C,_C,_C,_C,_C,			/* 0-7 */
-_C,_C|_S,_C|_S,_C|_S,_C|_S,_C|_S,_C,_C,		/* 8-15 */
-_C,_C,_C,_C,_C,_C,_C,_C,			/* 16-23 */
-_C,_C,_C,_C,_C,_C,_C,_C,			/* 24-31 */
-_S|_SP,_P,_P,_P,_P,_P,_P,_P,			/* 32-39 */
-_P,_P,_P,_P,_P,_P,_P,_P,			/* 40-47 */
-_D,_D,_D,_D,_D,_D,_D,_D,			/* 48-55 */
-_D,_D,_P,_P,_P,_P,_P,_P,			/* 56-63 */
-_P,_U|_X,_U|_X,_U|_X,_U|_X,_U|_X,_U|_X,_U,	/* 64-71 */
-_U,_U,_U,_U,_U,_U,_U,_U,			/* 72-79 */
-_U,_U,_U,_U,_U,_U,_U,_U,			/* 80-87 */
-_U,_U,_U,_P,_P,_P,_P,_P,			/* 88-95 */
-_P,_L|_X,_L|_X,_L|_X,_L|_X,_L|_X,_L|_X,_L,	/* 96-103 */
-_L,_L,_L,_L,_L,_L,_L,_L,			/* 104-111 */
-_L,_L,_L,_L,_L,_L,_L,_L,			/* 112-119 */
-_L,_L,_L,_P,_P,_P,_P,_C,			/* 120-127 */
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,		/* 128-143 */
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,		/* 144-159 */
-_S|_SP,_P,_P,_P,_P,_P,_P,_P,_P,_P,_P,_P,_P,_P,_P,_P,   /* 160-175 */
-_P,_P,_P,_P,_P,_P,_P,_P,_P,_P,_P,_P,_P,_P,_P,_P,       /* 176-191 */
-_U,_U,_U,_U,_U,_U,_U,_U,_U,_U,_U,_U,_U,_U,_U,_U,       /* 192-207 */
-_U,_U,_U,_U,_U,_U,_U,_P,_U,_U,_U,_U,_U,_U,_U,_L,       /* 208-223 */
-_L,_L,_L,_L,_L,_L,_L,_L,_L,_L,_L,_L,_L,_L,_L,_L,       /* 224-239 */
-_L,_L,_L,_L,_L,_L,_L,_P,_L,_L,_L,_L,_L,_L,_L,_L};      /* 240-255 */
+	_C,_C,_C,_C,_C,_C,_C,_C,			/* 0-7 */
+	_C,_C|_S,_C|_S,_C|_S,_C|_S,_C|_S,_C,_C,		/* 8-15 */
+	_C,_C,_C,_C,_C,_C,_C,_C,			/* 16-23 */
+	_C,_C,_C,_C,_C,_C,_C,_C,			/* 24-31 */
+	_S|_SP,_P,_P,_P,_P,_P,_P,_P,			/* 32-39 */
+	_P,_P,_P,_P,_P,_P,_P,_P,			/* 40-47 */
+	_D,_D,_D,_D,_D,_D,_D,_D,			/* 48-55 */
+	_D,_D,_P,_P,_P,_P,_P,_P,			/* 56-63 */
+	_P,_U|_X,_U|_X,_U|_X,_U|_X,_U|_X,_U|_X,_U,	/* 64-71 */
+	_U,_U,_U,_U,_U,_U,_U,_U,			/* 72-79 */
+	_U,_U,_U,_U,_U,_U,_U,_U,			/* 80-87 */
+	_U,_U,_U,_P,_P,_P,_P,_P,			/* 88-95 */
+	_P,_L|_X,_L|_X,_L|_X,_L|_X,_L|_X,_L|_X,_L,	/* 96-103 */
+	_L,_L,_L,_L,_L,_L,_L,_L,			/* 104-111 */
+	_L,_L,_L,_L,_L,_L,_L,_L,			/* 112-119 */
+	_L,_L,_L,_P,_P,_P,_P,_C,			/* 120-127 */
+	0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,		/* 128-143 */
+	0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,		/* 144-159 */
+	_S|_SP,_P,_P,_P,_P,_P,_P,_P,_P,_P,_P,_P,_P,_P,_P,_P,   /* 160-175 */
+	_P,_P,_P,_P,_P,_P,_P,_P,_P,_P,_P,_P,_P,_P,_P,_P,       /* 176-191 */
+	_U,_U,_U,_U,_U,_U,_U,_U,_U,_U,_U,_U,_U,_U,_U,_U,       /* 192-207 */
+	_U,_U,_U,_U,_U,_U,_U,_P,_U,_U,_U,_U,_U,_U,_U,_L,       /* 208-223 */
+	_L,_L,_L,_L,_L,_L,_L,_L,_L,_L,_L,_L,_L,_L,_L,_L,       /* 224-239 */
+	_L,_L,_L,_L,_L,_L,_L,_P,_L,_L,_L,_L,_L,_L,_L,_L};      /* 240-255 */
 
 
 #ifdef NAUT_CONFIG_USE_NAUT_BUILTINS
-size_t 
+	size_t 
 strlen (const char * str)
 {
-    size_t ret = 0;
-    while (str[ret] != 0) {
-        ret++;
-    }
+	size_t ret = 0;
+	while (str[ret] != 0) {
+		ret++;
+	}
 
-    return ret;
+	return ret;
 }
 
 
-size_t
+	size_t
 strnlen (const char * str, size_t max)
 {
-    size_t ret = 0;
-    while (max-- && str[ret] != 0) {
-        ret++;
-    }
-    return ret;
+	size_t ret = 0;
+	while (max-- && str[ret] != 0) {
+		ret++;
+	}
+	return ret;
 }
 
 
-void *
+	void *
 memcpy (void * dst, const void * src, size_t n)
 {
-    unsigned char * d = (unsigned char *)dst;
-    unsigned char * s = (unsigned char *)src;
+	unsigned char * d = (unsigned char *)dst;
+	unsigned char * s = (unsigned char *)src;
 
-    while (n--) {
-        *d++ = *s++;
-    }
+	while (n--) {
+		*d++ = *s++;
+	}
 
-    return dst;
+	return dst;
 }
 
 
-void * 
+	void * 
 memset (void * dst, char c, size_t n)
 {
-    unsigned char * d = (unsigned char *)dst;
-    while (n--) {
-        *d++ = c;
-    }
+	unsigned char * d = (unsigned char *)dst;
+	while (n--) {
+		*d++ = c;
+	}
 
-    return dst;
+	return dst;
 }
 
 
-void * 
+	void * 
 memmove (void * dst, const void * src, size_t n)
 {
-    unsigned long int dstp = (long int) dst;
-    unsigned long int srcp = (long int) src;
+	unsigned long int dstp = (long int) dst;
+	unsigned long int srcp = (long int) src;
 
-    /* This test makes the forward copying code be used whenever possible.
-       Reduces the working set.  */
-    if (dstp - srcp >= n) {
-        /* Copy from the beginning to the end.  */
-        dst = memcpy (dst, src, n);
-    } else {
-        /* Copy from the end to the beginning.  */
-        srcp += n;
-        dstp += n;
+	/* This test makes the forward copying code be used whenever possible.
+	   Reduces the working set.  */
+	if (dstp - srcp >= n) {
+		/* Copy from the beginning to the end.  */
+		dst = memcpy (dst, src, n);
+	} else {
+		/* Copy from the end to the beginning.  */
+		srcp += n;
+		dstp += n;
 
-        /* If there not too few bytes to copy, use word copy.  */
-        if (n >= OP_T_THRES)
-        {
-            /* Copy just a few bytes to make DSTP aligned.  */
-            n -= dstp % OPSIZ;
-            BYTE_COPY_BWD (dstp, srcp, dstp % OPSIZ);
+		/* If there not too few bytes to copy, use word copy.  */
+		if (n >= OP_T_THRES)
+		{
+			/* Copy just a few bytes to make DSTP aligned.  */
+			n -= dstp % OPSIZ;
+			BYTE_COPY_BWD (dstp, srcp, dstp % OPSIZ);
 
-            /* Copy from SRCP to DSTP taking advantage of the known
-               alignment of DSTP.  Number of bytes remaining is put
-               in the third argument, i.e. in LEN.  This number may
-               vary from machine to machine.  */
+			/* Copy from SRCP to DSTP taking advantage of the known
+			   alignment of DSTP.  Number of bytes remaining is put
+			   in the third argument, i.e. in LEN.  This number may
+			   vary from machine to machine.  */
 
-            WORD_COPY_BWD (dstp, srcp, n, n);
+			WORD_COPY_BWD (dstp, srcp, n, n);
 
-            /* Fall out and copy the tail.  */
-        }
+			/* Fall out and copy the tail.  */
+		}
 
-        /* There are just a few bytes to copy.  Use byte memory operations.  */
-        BYTE_COPY_BWD (dstp, srcp, n);
-    }
+		/* There are just a few bytes to copy.  Use byte memory operations.  */
+		BYTE_COPY_BWD (dstp, srcp, n);
+	}
 
-    return dst;
+	return dst;
 }
 
-        
 
-int 
+
+	int 
 memcmp (const void * s1_, const void * s2_, size_t n) 
 {
-    const char * s1 = s1_;
-    const char * s2 = s2_;
+	const char * s1 = s1_;
+	const char * s2 = s2_;
 
-    while (n > 0) {
+	while (n > 0) {
 
-        int cmp = (*s1 - *s2);
+		int cmp = (*s1 - *s2);
 
-        if (cmp != 0) {
-            return cmp;
-        }
+		if (cmp != 0) {
+			return cmp;
+		}
 
-        ++s1;
-        ++s2;
-        --n;
-    }
+		++s1;
+		++s2;
+		--n;
+	}
 
-    return 0;
+	return 0;
 }
 
 
-int 
+	int 
 strcmp (const char * s1, const char * s2) 
 {
-    while (1) {
-    int cmp = (*s1 - *s2);
+	while (1) {
+		int cmp = (*s1 - *s2);
 
-    if ((cmp != 0) || (*s1 == '\0') || (*s2 == '\0')) {
-        return cmp;
-    }
+		if ((cmp != 0) || (*s1 == '\0') || (*s2 == '\0')) {
+			return cmp;
+		}
 
-    ++s1;
-    ++s2;
-    }
+		++s1;
+		++s2;
+	}
 }
 
 
-int 
+	int 
 strcasecmp (const char * s1, const char * s2) 
 {
-    while (1) {
-    int cmp = (tolower(*s1) - tolower(*s2));
+	while (1) {
+		int cmp = (tolower(*s1) - tolower(*s2));
 
-    if ((cmp != 0) || (*s1 == '\0') || (*s2 == '\0')) {
-        return cmp;
-    }
+		if ((cmp != 0) || (*s1 == '\0') || (*s2 == '\0')) {
+			return cmp;
+		}
 
-    ++s1;
-    ++s2;
-    }
+		++s1;
+		++s2;
+	}
 }
 
 
-int 
+	int 
 strncmp (const char * s1, const char * s2, size_t limit) 
 {
-    size_t i = 0;
+	size_t i = 0;
 
-    while (i < limit) {
-    int cmp = (*s1 - *s2);
+	while (i < limit) {
+		int cmp = (*s1 - *s2);
 
-    if ((cmp != 0) || (*s1 == '\0') || (*s2 == '\0')) {
-        return cmp;
-    }
+		if ((cmp != 0) || (*s1 == '\0') || (*s2 == '\0')) {
+			return cmp;
+		}
 
-    ++s1;
-    ++s2;
-    ++i;
-    }
+		++s1;
+		++s2;
+		++i;
+	}
 
-    /* limit reached and equal */
-    return 0;
+	/* limit reached and equal */
+	return 0;
 }
 
 
-int 
+	int 
 strncasecmp (const char * s1, const char * s2, size_t limit) 
 {
-    size_t i = 0;
+	size_t i = 0;
 
-    while (i < limit) {
-    int cmp = (tolower(*s1) - tolower(*s2));
+	while (i < limit) {
+		int cmp = (tolower(*s1) - tolower(*s2));
 
-    if ((cmp != 0) || (*s1 == '\0') || (*s2 == '\0')) {
-        return cmp;
-    }
+		if ((cmp != 0) || (*s1 == '\0') || (*s2 == '\0')) {
+			return cmp;
+		}
 
-    ++s1;
-    ++s2;
-    ++i;
-    }
+		++s1;
+		++s2;
+		++i;
+	}
 
-    return 0;
+	return 0;
 }
 
 
-char * 
+	char * 
 strdup (const char * s)
 {
-    const unsigned len = strlen(s) + 1;
-    char * new = malloc(len);
-    memcpy(new, s, len);
-    return new;
+	const unsigned len = strlen(s) + 1;
+	char * new = malloc(len);
+	memcpy(new, s, len);
+	return new;
 }
 
-char *
+	char *
 strpbrk (const char * cs, const char * ct)
 {
 	const char *sc1, *sc2;
@@ -277,7 +277,7 @@ strpbrk (const char * cs, const char * ct)
  * of that name. In fact, it was stolen from glibc2 and de-fancy-fied.
  * Same semantics, slimmer shape. ;)
  */
-char *
+	char *
 strsep (char ** s, const char * ct)
 {
 	char *sbegin = *s;
@@ -294,289 +294,347 @@ strsep (char ** s, const char * ct)
 }
 
 
-char * 
+	char * 
 strcat (char * s1, const char * s2) 
 {
-    char * t1 = s1;
+	char * t1 = s1;
 
-    while (*s1) { s1++; }
-    while (*s2) { *s1++ = *s2++; }
+	while (*s1) { s1++; }
+	while (*s2) { *s1++ = *s2++; }
 
-    *s1 = '\0';
+	*s1 = '\0';
 
-    return t1;
+	return t1;
 }
 
 
-char * 
+	char * 
 strncat (char * s1, const char * s2, size_t limit) 
 {
-    size_t i = 0;
-    char * t1;
+	size_t i = 0;
+	char * t1;
 
-    t1 = s1;
+	t1 = s1;
 
-    while (*s1) { s1++; }
+	while (*s1) { s1++; }
 
-    while (i < limit) {
-    if (*s2 == '\0') {
-        break;
-    }
-    *s1++ = *s2++;
-    }
-    *s1 = '\0';
-    return t1;
+	while (i < limit) {
+		if (*s2 == '\0') {
+			break;
+		}
+		*s1++ = *s2++;
+	}
+	*s1 = '\0';
+	return t1;
 }
 
 
-char * 
+	char * 
 strcpy (char * dest, const char * src)
 {
-    char *ret = dest;
+	char *ret = dest;
 
-    while (*src) {
-        *dest++ = *src++;
-    }
-    *dest = '\0';
+	while (*src) {
+		*dest++ = *src++;
+	}
+	*dest = '\0';
 
-    return ret;
+	return ret;
 }
 
 
-char * 
+	char * 
 strncpy (char * dest, const char * src, size_t limit) 
 {
-    char * ret = dest;
+	char * ret = dest;
 
-    while ((*src != '\0') && (limit > 0)) {
-    *dest++ = *src++;
-    --limit;
-    }
+	while ((*src != '\0') && (limit > 0)) {
+		*dest++ = *src++;
+		--limit;
+	}
 
-    if (limit > 0)
-    *dest = '\0';
+	if (limit > 0)
+		*dest = '\0';
 
-    return ret;
+	return ret;
 }
 
 
-char * 
+	char * 
 strchr (const char * s, int c) 
 {
-    while (*s != '\0') {
-    if (*s == c)
-        return (char *)s;
-    ++s;
-    }
-    return 0;
+	while (*s != '\0') {
+		if (*s == c)
+			return (char *)s;
+		++s;
+	}
+	return 0;
 }
 
 
-char * 
+	char * 
 strrchr (const char * s, int c) 
 {
-    size_t len = strlen(s);
-    const char * p = s + len;
+	size_t len = strlen(s);
+	const char * p = s + len;
 
-    while (p > s) {
-    --p;
+	while (p > s) {
+		--p;
 
-    if (*p == c) {
-        return (char *)p;
-    }
-    }
-    return 0;
+		if (*p == c) {
+			return (char *)p;
+		}
+	}
+	return 0;
 }
 
 
 #endif  /* USE_NAUT_BUILTINS */
 
-int 
+	int 
 atoi (const char * buf) 
 {
-    int ret = 0;
+	int ret = 0;
 
-    while ((*buf >= '0') && (*buf <= '9')) {
-    ret *= 10;
-    ret += (*buf - '0');
-    buf++;
-    }
+	while ((*buf >= '0') && (*buf <= '9')) {
+		ret *= 10;
+		ret += (*buf - '0');
+		buf++;
+	}
 
-    return ret;
+	return ret;
 }
 
 
-int 
+	int 
 strtoi (const char * nptr, char ** endptr) 
 {
-    int ret = 0;
-    char * buf = (char *)nptr;
+	int ret = 0;
+	char * buf = (char *)nptr;
 
-    while ((*buf >= '0') && (*buf <= '9')) {
-    ret *= 10;
-    ret += (*buf - '0');
+	while ((*buf >= '0') && (*buf <= '9')) {
+		ret *= 10;
+		ret += (*buf - '0');
 
-    buf++;
+		buf++;
 
-    if (endptr) {
-        *endptr = buf;
-    }
-    }
+		if (endptr) {
+			*endptr = buf;
+		}
+	}
 
-    return ret;
+	return ret;
 }
 
 extern long simple_strtol(const char*, char**, unsigned int);
-long 
+	long 
 strtol (const char * str, char ** endptr, int base)
 {
-    return simple_strtol(str, endptr, base);
+	return simple_strtol(str, endptr, base);
 }
 
 uint64_t 
 atox (const char * buf) {
-    uint64_t ret = 0;
+	uint64_t ret = 0;
 
-    if (*(buf + 1) == 'x') {
-    buf += 2;
-    }
+	if (*(buf + 1) == 'x') {
+		buf += 2;
+	}
 
-    while (isxdigit(*buf)) {
-    ret <<= 4;
+	while (isxdigit(*buf)) {
+		ret <<= 4;
 
-    if (isdigit(*buf)) {
-        ret += (*buf - '0');
-    } else {
-        ret += tolower(*buf) - 'a' + 10;
-    }
+		if (isdigit(*buf)) {
+			ret += (*buf - '0');
+		} else {
+			ret += tolower(*buf) - 'a' + 10;
+		}
 
-    buf++;
-    }
+		buf++;
+	}
 
-    return ret;
+	return ret;
 }
 
 
-uint64_t 
+
+	char *
+__strtok_r(char *s, const char *delim, char **last)
+{
+	char *spanp, *tok;
+	int c, sc;
+
+	if (s == NULL && (s = *last) == NULL)
+		return (NULL);
+
+	/*
+	 * 	 * Skip (span) leading delimiters (s += strspn(s, delim), sort of).
+	 * 	 	 */
+cont:
+	c = *s++;
+	for (spanp = (char *)delim; (sc = *spanp++) != 0;) {
+		if (c == sc)
+			goto cont;
+	}
+
+	if (c == 0) {		/* no non-delimiter characters */
+		*last = NULL;
+		return (NULL);
+	}
+	tok = s - 1;
+
+	/*
+	 * 	 * Scan token (scan for delimiters: s += strcspn(s, delim), sort of).
+	 * 	 	 * Note that delim must have one NUL; we stop if we see that, too.
+	 * 	 	 	 */
+	for (;;) {
+		c = *s++;
+		spanp = (char *)delim;
+		do {
+			if ((sc = *spanp++) == c) {
+				if (c == 0)
+					s = NULL;
+				else
+					s[-1] = '\0';
+				*last = s;
+				return (tok);
+			}
+		} while (sc != 0);
+	}
+	/* NOTREACHED */
+}
+
+	char *
+strtok(char *s, const char *delim)
+{
+	static char *last;
+
+	return (__strtok_r(s, delim, &last));
+}
+
+
+
+
+	uint64_t 
 strtox (const char * nptr, char ** endptr) 
 {
-    uint64_t ret = 0;
-    char * buf = (char *)nptr;
+	uint64_t ret = 0;
+	char * buf = (char *)nptr;
 
-    if (*(buf + 1) == 'x') {
-    buf += 2;
-    }
+	if (*(buf + 1) == 'x') {
+		buf += 2;
+	}
 
-    while (isxdigit(*buf)) {
-    ret <<= 4;
+	while (isxdigit(*buf)) {
+		ret <<= 4;
 
-    if (isdigit(*buf)) {
-        ret += (*buf - '0');
-    } else {
-        ret += tolower(*buf) - 'a' + 10;
-    }
+		if (isdigit(*buf)) {
+			ret += (*buf - '0');
+		} else {
+			ret += tolower(*buf) - 'a' + 10;
+		}
 
-    buf++;
+		buf++;
 
-    if (endptr) {
-        *endptr = buf;
-    }
-    }
+		if (endptr) {
+			*endptr = buf;
+		}
+	}
 
-    return ret;
+	return ret;
 }
 
 
-size_t 
+	size_t 
 strspn (const char * s, const char * accept) 
 {
-    int match = 1;
-    int cnt = 0;
-    int i = 0;
-    int accept_len = strlen(accept);
+	int match = 1;
+	int cnt = 0;
+	int i = 0;
+	int accept_len = strlen(accept);
 
-    while (match) {
-    match = 0;
+	while (match) {
+		match = 0;
 
-    for (i = 0; i < accept_len; i++) {
-        if (s[cnt] == accept[i]) {
-        match = 1;
-        cnt++;
-        break;
-        }
-    }
-    }
+		for (i = 0; i < accept_len; i++) {
+			if (s[cnt] == accept[i]) {
+				match = 1;
+				cnt++;
+				break;
+			}
+		}
+	}
 
-    return cnt;
+	return cnt;
 }
 
 
-size_t 
+	size_t 
 strcspn (const char * s, const char * reject) 
 {
-    int match = 0;
-    int cnt = 0;
-    int i = 0;
-    int reject_len = strlen(reject);
+	int match = 0;
+	int cnt = 0;
+	int i = 0;
+	int reject_len = strlen(reject);
 
-    while (!match) {
-    for (i = 0; i < reject_len; i++) {
-        if (s[cnt] == reject[i]) {
-        match = 1;
-        break;
-        }
-    }
+	while (!match) {
+		for (i = 0; i < reject_len; i++) {
+			if (s[cnt] == reject[i]) {
+				match = 1;
+				break;
+			}
+		}
 
-    if (!match) {
-        cnt++;
-    }
+		if (!match) {
+			cnt++;
+		}
 
-    }
+	}
 
-    return cnt;
+	return cnt;
 }
 
 
-char *
+	char *
 strstr (const char * s1, const char * s2)
 {
-        int l1, l2;
+	int l1, l2;
 
-        l2 = strlen(s2);
-        if (!l2)
-                return (char *)s1;
-        l1 = strlen(s1);
-        while (l1 >= l2) {
-                l1--;
-                if (!memcmp(s1, s2, l2))
-                        return (char *)s1;
-                s1++;
-        }
-        return NULL;
+	l2 = strlen(s2);
+	if (!l2)
+		return (char *)s1;
+	l1 = strlen(s1);
+	while (l1 >= l2) {
+		l1--;
+		if (!memcmp(s1, s2, l2))
+			return (char *)s1;
+		s1++;
+	}
+	return NULL;
 }
 
 
-void 
+	void 
 str_tolower (char * s) 
 {
-    while (isalpha(*s)) {
-    if (!islower(*s)) {
-        *s = tolower(*s);
-    }
-    s++;
-    }
+	while (isalpha(*s)) {
+		if (!islower(*s)) {
+			*s = tolower(*s);
+		}
+		s++;
+	}
 }
 
 
-void 
+	void 
 str_toupper (char * s) 
 {
-    while (isalpha(*s)) {
-    if (!isupper(*s)) {
-        *s = toupper(*s);
-    }
-    s++;
-    }
+	while (isalpha(*s)) {
+		if (!isupper(*s)) {
+			*s = toupper(*s);
+		}
+		s++;
+	}
 }
 
 

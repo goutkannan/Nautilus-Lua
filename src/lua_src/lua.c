@@ -18,7 +18,9 @@
 #include "lua/lauxlib.h"
 #include "lua/lualib.h"
 #include <nautilus/shell.h>
+#ifdef NAUT_CONFIG_LOAD_LUA
 #include <dev/lua_script.h>
+#endif
 
 #if !defined(LUA_PROMPT)
 #define LUA_PROMPT		"> "
@@ -217,8 +219,7 @@ static int dofile (lua_State *L, const char *name) {
 
 
 static int dostring (lua_State *L, const char *s, const char *name) {
-	printk("\n in do string %s",s);
-  	printk("\n strlen %d",strlen(s));
+  	//printk("\n strlen %d",strlen(s));
 	int status = luaL_loadbuffer(L, s, strlen(s), name);
   if (status == LUA_OK) status = docall(L, 0, 0);
   return report(L, status);
@@ -291,7 +292,6 @@ static int pushline (lua_State *L, int firstline) {
 static int loadline (lua_State *L) {
   int status;
   lua_settop(L, 0);
-//  printk("\n LUA_loadline init call");
   if (!pushline(L, 1))
   {
 //	printk("\n LUA_loadline pushline failure");  
@@ -336,11 +336,27 @@ static void dotty (lua_State *L) {
   progname = oldprogname;
 }
 
+char *trimwhitespace(char *str)
+{
+	  char *end;
 
+	   while(isspace((unsigned char)*str)) str++;
+	   if(*str == 0)  // All spaces?
+	          return str;
+	    
+	               // Trim trailing space
+	    end = str + strlen(str) - 1;
+	    while(end > str && isspace((unsigned char)*end)) end--;
+	    
+	        // Write new null terminator
+	    *(end+1) = 0;
+	    return str;
+	                        
+}
 static int handle_script (lua_State *L, char **argv, int n) {
   int status;
   //const char *fname;
-  printk("\n in handle_script");
+ // printk("\n in handle_script");
   const char* buffname;
   
 // int narg = getargs(L, argv, n);  /* collect arguments */
@@ -349,11 +365,15 @@ static int handle_script (lua_State *L, char **argv, int n) {
  // if (strcmp(fname, "-") == 0 && strcmp(argv[n-1], "--") != 0)
    // fname = NULL;  /* stdin */
  // status = luaL_loadfile(L, fname);
-  buffname = read_lua_script(); 
-  printk("\n after buffname content is %s",buffname);
+#ifdef NAUT_CONFIG_LOAD_LUA 
+  buffname = read_lua_script();
+  buffname = trimwhitespace(buffname);
+#endif
 
-  status = dostring(L,buffname,"=" LUA_INIT);
-  
+
+ status = dostring(L,buffname,"=" LUA_INIT);
+
+ //  status = dostring(L,"print('hi')","=" LUA_INIT);
  // lua_insert(L, -(narg+1));
   if (status != LUA_OK)
     lua_pop(L, 1);
@@ -378,9 +398,7 @@ static int handle_script (lua_State *L, char **argv, int n) {
 static int collectargs (char **argv, int *args) {
   int i;
   
-  //printk("\n In collect argsc");
   for (i = 1; argv[i] != NULL; i++) {
-	  printk("\n in collect argv of %d is %s",i,argv[i]);
 
     if (argv[i][0] != '-')  /* not an option? */
         return i;
@@ -466,15 +484,18 @@ static int pmain (lua_State *L) {
   int script;
   int args[num_has];
   //printk("\n argc %d",argc);
-  printk("\n count argc: %d and argv %s",argc,argv[1]);
+//  printk("\n count argc: %d and argv %s",argc,argv[1]);
   //printk("\n pmain - line 5");
   args[has_i] = args[has_v] = args[has_e] = args[has_E] = 0;
 //  printk("\n after has");
 //
   if (argv[0] && argv[0][0]) progname = argv[0];
 
+ if (argc>1)
   script = collectargs(argv, args);
-  printk("\n after collectargs %d",script);
+ else 
+	script =0; 
+ printk("\n script %d",script);
 
   if (script < 0) {  /* invalid arg? */
      print_usage(argv[-script]);
@@ -498,7 +519,6 @@ static int pmain (lua_State *L) {
   //printk("after openlibs");
 
   lua_gc(L, LUA_GCRESTART, 0);
-  printk("after gc");
   
   if (!args[has_E] && handle_luainit(L) != LUA_OK)
      return 0;  /* error running LUA_INIT */
@@ -510,8 +530,10 @@ static int pmain (lua_State *L) {
       dotty(L);
     else if (script == 0 && !args[has_e] && !args[has_v]) \
     {  /* no arguments? */
+       printk("\n in for no args");
        if (lua_stdin_is_tty()) 
        {
+	      
          print_version();
          dotty(L);
        }
@@ -524,10 +546,12 @@ static int pmain (lua_State *L) {
 
 int lua_main (int argc, char **argv) {
   
-  printk("\n in Lua main : %s",*argv);
-  int status, result;
+  
+ int status, result;
   lua_State *L = luaL_newstate();   /*create state */
- // printk("\n LUA-MAIN | new state created. args %s",argv[0]);
+  
+	printk("\n LUA-MAIN | new state created. argc %d",argc);
+  printk("\n LUA-MAIN | new state created. args %s",argv[0]);
   if (L == NULL) {
     l_message(argv[0], "cannot create state: not enough memory");
     return EXIT_FAILURE;
@@ -538,6 +562,7 @@ int lua_main (int argc, char **argv) {
   //printk("\n LUA-MAIN | lua_pushfunction Success. ");
   lua_pushinteger(L, argc);
  // printk("\n LUA-MAIN | lua_pushinteger Success. ");  
+  printk("\n lua main arg %s",argv[1]);
   lua_pushlightuserdata(L, argv);  /*2nd argument */
  // printk("\n LUA-MAIN | lua_pushlightuserdata Success .");
   status = lua_pcall(L, 2, 1, 0);// -- temp call

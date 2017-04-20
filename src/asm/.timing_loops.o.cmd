@@ -55,6 +55,8 @@ deps_src/asm/timing_loops.o := \
     $(wildcard include/config/ramdisk.h) \
     $(wildcard include/config/ata.h) \
     $(wildcard include/config/ext2/filesystem/driver.h) \
+    $(wildcard include/config/load/lua.h) \
+    $(wildcard include/config/lua/test.h) \
 
 src/asm/timing_loops.o: $(deps_src/asm/timing_loops.o)
 

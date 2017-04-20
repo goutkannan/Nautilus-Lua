@@ -1,7 +1,7 @@
 /*
  * Automatically generated C config: don't edit
  * Nautilus version: 
- * Tue Apr 11 21:38:38 2017
+ * Thu Apr 20 00:09:27 2017
  */
 #define AUTOCONF_INCLUDED
 
@@ -68,7 +68,7 @@
 #undef NAUT_CONFIG_PROFILE
 #undef NAUT_CONFIG_SILENCE_UNDEF_ERR
 #undef NAUT_CONFIG_ENABLE_STACK_CHECK
-#undef NAUT_CONFIG_DEBUG_VIRTUAL_CONSOLE
+#define NAUT_CONFIG_DEBUG_VIRTUAL_CONSOLE 1
 #undef NAUT_CONFIG_DEBUG_DEV
 
 /*
@@ -95,3 +95,9 @@
  * Filesystems
  */
 #undef NAUT_CONFIG_EXT2_FILESYSTEM_DRIVER
+
+/*
+ * Lua interpreter support 
+ */
+#define NAUT_CONFIG_LOAD_LUA 1
+#define NAUT_CONFIG_LUA_TEST 1

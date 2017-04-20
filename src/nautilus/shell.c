@@ -20,10 +20,14 @@
  * This is free software.  You are permitted to use,
  * redistribute, and modify it as specified in the file "LICENSE.txt".
  */
+
 #include <nautilus/libccompat.h>
+#ifdef NAUT_CONFIG_LOAD_LUA
 #include "lua/lua.h"
 #include "lua/lualib.h"
 #include "lua/lauxlib.h"
+#endif
+
 #include <nautilus/nautilus.h>
 #include <nautilus/shell.h>
 #include <nautilus/vc.h>
@@ -42,7 +46,42 @@ static int handle_cmd(char *buf, int n)
   if (*buf==0) { 
     return 0;
   }
+  if(strncasecmp(buf,"lua",3)==0)
+  {
+  #ifdef NAUT_CONFIG_LOAD_LUA
+	  
+	  char **buff = malloc(sizeof *buff);
+	  
+	  char *tmp;
+	  
+	  tmp = strtok(buf, " ");
+	  int count=0;
+	  
+	  while(tmp !=NULL)
+	  {
+	        if(count==0)
+		{
+			char *farg = strcat("./",tmp);
+		  	strcpy(buff[count],farg);
+		}
+		else
+			strcpy(buff[count],tmp);
+		
+		tmp = strtok(NULL," "); 
+		count++;
+		 
+	  
+	  }
+	  printk("\n %d .... %s",count,buff[0]);
+	  int st = lua_main(count,buff);
+	  return 0;
 
+  #else
+      nk_vc_prinf("\n Please enable Lua using make menuconfig");
+      return 1;
+  #endif
+
+  }
   if (!strncasecmp(buf,"exit",4)) { 
     return 1;
   }
@@ -95,16 +134,9 @@ static void shell(void *in, void **out)
   
   nk_vc_clear(0x9f);
 
-  char *lua_script=read_lua_script();
-      // printk(">> %s",lua_script);
+ 
+ 
 
-  int st; 
-  char **srg;
- srg[0] = "./lua";
- srg[1] = "something.lua";
-  //printk("\n  Before main %s",srg); 
-  st = lua_main(2,srg); 
- // printk("\n after main");  
   while (1) {  
     nk_vc_printf("%s> ", (char*)in);
     nk_vc_gets(buf,80,1);

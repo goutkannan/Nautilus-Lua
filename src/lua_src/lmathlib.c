@@ -237,6 +237,42 @@ static int math_randomseed (lua_State *L) {
   return 0;
 }
 
+static int math_ref(lua_State *L) {
+     size_t l;
+     //const char *p = luaL_checklstring(L, 1, &l);
+      //lua_getglobal(L, p);
+      printf("\nin math.ref");
+      int r = luaL_ref(L, LUA_REGISTRYINDEX);
+      lua_pushnumber(L, r);
+  return 1;
+}
+static int math_deref(lua_State *L) {
+      int r = (int)luaL_checknumber(L, 1);
+      lua_rawgeti(L, LUA_REGISTRYINDEX, r);
+      return 1;
+}
+
+static int create_int(lua_State *L){
+  void *p=malloc(sizeof(int));
+  lua_pushlightuserdata(L,p);
+//  printf("\n allocated int at addr %u",(unsigned int)p);
+  return 1;
+}
+
+static int set_int(lua_State *L){
+  int *p=(int *)lua_touserdata(L,1);
+  int i=luaL_checkint(L,2);
+  *p=i;
+//  printf("\naddr %u is set to value %d",(unsigned int)p, *p);
+  return 1;
+}
+static int get_int(lua_State *L){
+  int *p=(int *)lua_touserdata(L,1);
+  int r=*p;
+//  printf("\n addr %u  has value %d",(unsigned int)p, r);
+  lua_pushnumber(L,r);
+  return 1;
+}
 
 static const luaL_Reg mathlib[] = {
   {"abs",   math_abs},
@@ -269,6 +305,11 @@ static const luaL_Reg mathlib[] = {
   {"sqrt",  math_sqrt},
   {"tanh",   math_tanh},
   {"tan",   math_tan},
+  {"ref",   math_ref},
+  {"deref",   math_deref},
+  {"create_int",   create_int},
+  {"set_int",   set_int},
+  {"get_int",   get_int},
   {NULL, NULL}
 };
 

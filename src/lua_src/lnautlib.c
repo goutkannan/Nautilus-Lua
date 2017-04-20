@@ -46,7 +46,6 @@ struct nk_hashtable_iter ;
 struct cpu ;
 struct nk_rwlock ;
 struct nk_hashtable ;
-struct excp_entry_state ;
 struct nk_virtual_console ;
 struct timespec ;
 struct nk_regs ;
@@ -60,6 +59,7 @@ struct rb_node ;
 struct rb_node ;
 struct rb_root ;
 struct apic_dev ;
+struct excp_entry_state ;
 struct apic_dev ;
 struct apic_dev ;
 struct mem_region ;
@@ -112,9 +112,7 @@ struct sys_info ;
 struct pmc_event ;
 
 extern int wcsftime();
-typedef long unsigned int addr_t;
-typedef long unsigned int ulong_t;
-extern void mm_boot_reserve_mem(addr_t, ulong_t);
+extern int __strftime_l();
 extern int fclose(void *);
 extern int pthread_mutex_lock();
 extern void nk_condvar_test();
@@ -127,18 +125,20 @@ typedef long unsigned int ulong_t;
 extern void mm_boot_free_vmem(addr_t, ulong_t);
 extern int nk_condvar_destroy(struct nk_condvar *);
 typedef unsigned int uint32_t;
+//extern void apic_timer_setup(struct apic_dev *, uint32_t);
 extern long int mktime(struct tm *);
 extern void init(long unsigned int, long unsigned int);
 extern unsigned int nk_htable_count(struct nk_hashtable *);
 extern void disable_all_events();
-extern int __strftime_l();
+typedef long unsigned int addr_t;
+typedef long unsigned int ulong_t;
+extern void mm_boot_reserve_mem(addr_t, ulong_t);
 extern int strict_strtoul(const char *, unsigned int, long unsigned int *);
 typedef short unsigned int nk_keycode_t;
 extern int nk_enqueue_keycode(struct nk_virtual_console *, nk_keycode_t);
 extern int nk_switch_to_prev_vc();
 extern void vga_init_screen();
-typedef unsigned int uint32_t;
-extern long unsigned int msr_read(uint32_t);
+extern void test_nemo();
 extern int nk_sched_init();
 typedef long unsigned int ulong_t;
 extern void nk_stack_dump(ulong_t);
@@ -173,7 +173,6 @@ typedef long unsigned int ulong_t;
 extern void * __mm_boot_alloc(ulong_t, ulong_t, ulong_t);
 typedef long unsigned int addr_t;
 extern long unsigned int nk_htable_remove(struct nk_hashtable *, addr_t, int);
-extern double abs(double);
 extern void apic_init(struct cpu *);
 extern int nk_htable_iter_remove(struct nk_hashtable_iter *, int);
 extern int __freelocale();
@@ -196,11 +195,11 @@ extern int mf_handler(struct excp_entry_state *, excp_vec_t);
 extern void * realloc(void *, long unsigned int);
 typedef void * nk_thread_id_t;
 extern int nk_thread_run(nk_thread_id_t);
-extern int nk_core_barrier_arrive();
+extern int __strcoll_l();
 extern int printf(const char *, ...);
 extern int scnprintf(char *, long unsigned int, const char *, ...);
 extern int printk(const char *, ...);
-extern int pthread_mutex_init();
+extern int writev();
 extern void * __thread_fork();
 typedef int nemo_event_id_t;
 extern void nemo_event_notify(nemo_event_id_t, int);
@@ -223,16 +222,17 @@ extern int __errno_location();
 extern char * strerror(int);
 extern int nk_vc_getchar_extended(int);
 extern struct tm * localtime(const long int *);
-extern int __get_cpu_features();
+extern int nk_core_barrier_arrive();
 typedef long unsigned int ulong_t;
 extern void mm_boot_free(void *, ulong_t);
 extern long unsigned int nk_htable_get_iter_key(struct nk_hashtable_iter *);
 extern int strtold();
 extern void abort();
 extern int fprintf(void *, const char *, ...);
-extern int towupper();
-extern int feof(void *);
 extern double tan(double);
+extern int feof(void *);
+extern int towupper();
+//extern struct nk_thread * nk_need_resched();
 extern void * nk_get_parent_tid();
 extern long long unsigned int simple_strtoull(const char *, char * *, unsigned int);
 extern void clearerr(void *);
@@ -264,16 +264,16 @@ typedef long unsigned int addr_t;
 extern int nk_htable_insert(struct nk_hashtable *, addr_t, addr_t);
 extern int wctob();
 extern double atan2(double, double);
-extern int wmemmove();
+extern struct mem_region * nk_get_base_region_by_num(unsigned int);
 typedef long unsigned int ulong_t;
 extern void * mb_get_first_hrt_addr(ulong_t);
 extern int btowc();
-extern void test_nemo();
+typedef unsigned int uint32_t;
+extern long unsigned int msr_read(uint32_t);
 extern int wcsnrtombs();
 extern void serial_init();
 extern void main(long unsigned int, long unsigned int);
-typedef long unsigned int excp_vec_t;
-extern int nk_timer_handler(struct excp_entry_state *, excp_vec_t);
+extern int ischar(unsigned char *);
 extern int nk_vc_scrollup_specific(struct nk_virtual_console *);
 extern void mm_boot_kmem_init();
 extern int __uselocale();
@@ -293,7 +293,7 @@ extern void nk_vc_wait();
 extern void nk_print_regs(struct nk_regs *);
 extern int nk_condvar_init(struct nk_condvar *);
 extern int pci_init(struct naut_info *);
-extern int __stack_chk_fail();
+extern int remove(const char *);
 extern int nk_thread_queue_wake_one(struct nk_queue *);
 extern int nk_vc_print(char *);
 typedef long unsigned int ulong_t;
@@ -310,7 +310,8 @@ extern long unsigned int strcspn(const char *, const char *);
 extern int ferror(void *);
 extern void free(void *);
 extern int nk_condvar_bcast(struct nk_condvar *);
-extern double log(double);
+typedef void * locale_t;
+extern void * __newlocale(int, const char *, locale_t);
 extern int nk_timer_init(struct naut_info *);
 extern void nk_rb_replace_node(struct rb_node *, struct rb_node *, struct rb_root *);
 extern int nk_vc_printf(char *, ...);
@@ -319,7 +320,8 @@ typedef unsigned int uint32_t;
 typedef long unsigned int uint64_t;
 extern void msr_write(uint32_t, uint64_t);
 extern int rand();
-extern int ischar(unsigned char *);
+typedef long unsigned int excp_vec_t;
+extern int nk_timer_handler(struct excp_entry_state *, excp_vec_t);
 extern double ldexp(double, int);
 typedef short unsigned int nk_scancode_t;
 extern int nk_vc_handle_input(nk_scancode_t);
@@ -348,6 +350,7 @@ extern long unsigned int nk_hash_long(ulong_t, uint_t);
 extern void buddy_dump_mempool(struct buddy_mempool *);
 extern void fpu_init(struct naut_info *);
 extern int fscanf(void *, const char *, ...);
+extern int __get_cpu_features();
 extern int wcscmp();
 extern void idle(void *, void * *);
 extern void __assert_fail(const char *, const char *, unsigned int, const char *);
@@ -394,7 +397,7 @@ typedef unsigned int uint32_t;
 extern void apic_deinit_iipi(struct apic_dev *, uint32_t);
 extern double strtod(const char *, char * *);
 extern int strtof();
-extern int writev();
+extern int pthread_mutex_init();
 extern double frexp(double, int *);
 extern int fputs(const char *, void *);
 extern long unsigned int strtox(const char *, char * *);
@@ -408,7 +411,7 @@ extern double ceil(double);
 extern char * strsep(char * *, const char *);
 extern int fileno();
 extern int strict_strtoll(const char *, unsigned int, long long int *);
-extern int remove(const char *);
+extern int __stack_chk_fail();
 typedef unsigned int uint32_t;
 extern void apic_send_iipi(struct apic_dev *, uint32_t);
 typedef unsigned int uint_t;
@@ -453,7 +456,7 @@ extern int putc();
 typedef int nl_item;
 typedef void * locale_t;
 extern char * __nl_langinfo_l(nl_item, locale_t);
-extern int mbrtowc();
+extern long unsigned int fread(void *, long unsigned int, long unsigned int, void *);
 extern void mm_boot_kmem_cleanup();
 typedef void * nk_thread_id_t;
 extern void nk_thread_destroy(nk_thread_id_t);
@@ -496,7 +499,8 @@ extern int wmemcmp();
 extern struct rb_node * nk_rb_next(struct rb_node *);
 extern void vga_puts(char *);
 extern int fflush(void *);
-extern int __iswctype_l();
+typedef long unsigned int ulong_t;
+extern long unsigned int multiboot_get_phys_mem(ulong_t);
 extern char * tmpnam(char *);
 extern int strxfrm();
 extern int __strtod_l();
@@ -509,7 +513,6 @@ extern void nemo_event_await();
 extern int nk_vc_scrollup();
 extern char * strstr(const char *, const char *);
 extern int __strtof_l();
-extern int __strcoll_l();
 extern void * freopen(const char *, const char *, void *);
 extern struct mem_map_entry * mm_boot_get_region(unsigned int);
 extern int strcmp(const char *, const char *);
@@ -538,7 +541,7 @@ extern char * strcpy(char *, const char *);
 extern int __towupper_l();
 extern short unsigned int nk_vc_get_scancode(int);
 extern double acos(double);
-extern struct mem_region * nk_get_base_region_by_num(unsigned int);
+extern int wmemmove();
 extern int nk_barrier_destroy(struct nk_barrier *);
 extern char * setlocale(int, const char *);
 extern int nemo_init();
@@ -546,8 +549,7 @@ extern int smp_setup_xcall_bsp(struct cpu *);
 extern int __fxstat64();
 extern void * fopen(const char *, void *);
 extern void apic_bcast_deinit_iipi(struct apic_dev *);
-typedef void * locale_t;
-extern void * __newlocale(int, const char *, locale_t);
+extern double log(double);
 extern void * fdopen(int, const char *);
 extern int wcslen();
 extern int smp_early_init(struct naut_info *);
@@ -575,7 +577,7 @@ extern struct rb_node * nk_rb_last(struct rb_root *);
 extern int sscanf(const char *, const char *, ...);
 extern int syscall(int, ...);
 extern int nk_switch_to_vc_list();
-extern long unsigned int fread(void *, long unsigned int, long unsigned int, void *);
+extern int mbrtowc();
 extern int wctype();
 typedef short unsigned int nk_scancode_t;
 extern short unsigned int kbd_translate(nk_scancode_t);
@@ -586,8 +588,7 @@ extern char * gettext(const char *);
 typedef long unsigned int addr_t;
 typedef long unsigned int ulong_t;
 extern void mm_boot_free_mem(addr_t, ulong_t);
-typedef long unsigned int ulong_t;
-extern long unsigned int multiboot_get_phys_mem(ulong_t);
+extern int __iswctype_l();
 extern int kbd_deinit();
 extern int ioapic_init(struct sys_info *);
 extern int arch_numa_init(struct sys_info *);
@@ -606,10 +607,9 @@ static int naut_wcsftime(lua_State *L){
 	lua_pushnumber(L, temp_return);
 	return 1; 
 }
-static int naut_mm_boot_reserve_mem(lua_State *L){
-	long unsigned int start = luaL_checkunsigned(L,1);
-	long unsigned int size = luaL_checkunsigned(L,2);
-	mm_boot_reserve_mem(start ,size);
+static int naut___strftime_l(lua_State *L){
+	lua_Number temp_return =__strftime_l();
+	lua_pushnumber(L, temp_return);
 	return 1; 
 }
 static int naut_fclose(lua_State *L){
@@ -694,9 +694,10 @@ static int naut_disable_all_events(lua_State *L){
 	disable_all_events();
 	return 1; 
 }
-static int naut___strftime_l(lua_State *L){
-	lua_Number temp_return =__strftime_l();
-	lua_pushnumber(L, temp_return);
+static int naut_mm_boot_reserve_mem(lua_State *L){
+	long unsigned int start = luaL_checkunsigned(L,1);
+	long unsigned int size = luaL_checkunsigned(L,2);
+	mm_boot_reserve_mem(start ,size);
 	return 1; 
 }
 static int naut_strict_strtoul(lua_State *L){
@@ -723,10 +724,8 @@ static int naut_vga_init_screen(lua_State *L){
 	vga_init_screen();
 	return 1; 
 }
-static int naut_msr_read(lua_State *L){
-	unsigned int msr = luaL_checkunsigned(L,1);
-	lua_Number temp_return =msr_read(msr);
-	lua_pushnumber(L, temp_return);
+static int naut_test_nemo(lua_State *L){
+	test_nemo();
 	return 1; 
 }
 static int naut_nk_sched_init(lua_State *L){
@@ -861,12 +860,6 @@ static int naut_nk_htable_remove(lua_State *L){
 	lua_pushnumber(L, temp_return);
 	return 1; 
 }
-static int naut_abs(lua_State *L){
-	double x = luaL_checknumber(L,1);
-	lua_Number temp_return =abs(x);
-	lua_pushnumber(L, temp_return);
-	return 1; 
-}
 static int naut_apic_init(lua_State *L){
 	struct cpu * core = luaL_checkunsigned(L,1);
 	apic_init(core);
@@ -966,8 +959,8 @@ static int naut_nk_thread_run(lua_State *L){
 	lua_pushnumber(L, temp_return);
 	return 1; 
 }
-static int naut_nk_core_barrier_arrive(lua_State *L){
-	lua_Number temp_return =nk_core_barrier_arrive();
+static int naut___strcoll_l(lua_State *L){
+	lua_Number temp_return =__strcoll_l();
 	lua_pushnumber(L, temp_return);
 	return 1; 
 }
@@ -991,8 +984,8 @@ static int naut_printk(lua_State *L){
 	lua_pushnumber(L, temp_return);
 	return 1; 
 }
-static int naut_pthread_mutex_init(lua_State *L){
-	lua_Number temp_return =pthread_mutex_init();
+static int naut_writev(lua_State *L){
+	lua_Number temp_return =writev();
 	lua_pushnumber(L, temp_return);
 	return 1; 
 }
@@ -1096,8 +1089,8 @@ static int naut_localtime(lua_State *L){
 	lua_pushnumber(L, temp_return);
 	return 1; 
 }
-static int naut___get_cpu_features(lua_State *L){
-	lua_Number temp_return =__get_cpu_features();
+static int naut_nk_core_barrier_arrive(lua_State *L){
+	lua_Number temp_return =nk_core_barrier_arrive();
 	lua_pushnumber(L, temp_return);
 	return 1; 
 }
@@ -1129,8 +1122,9 @@ static int naut_fprintf(lua_State *L){
 	lua_pushnumber(L, temp_return);
 	return 1; 
 }
-static int naut_towupper(lua_State *L){
-	lua_Number temp_return =towupper();
+static int naut_tan(lua_State *L){
+	double x = luaL_checknumber(L,1);
+	lua_Number temp_return =tan(x);
 	lua_pushnumber(L, temp_return);
 	return 1; 
 }
@@ -1140,9 +1134,8 @@ static int naut_feof(lua_State *L){
 	lua_pushnumber(L, temp_return);
 	return 1; 
 }
-static int naut_tan(lua_State *L){
-	double x = luaL_checknumber(L,1);
-	lua_Number temp_return =tan(x);
+static int naut_towupper(lua_State *L){
+	lua_Number temp_return =towupper();
 	lua_pushnumber(L, temp_return);
 	return 1; 
 }/*
@@ -1304,8 +1297,9 @@ static int naut_atan2(lua_State *L){
 	lua_pushnumber(L, temp_return);
 	return 1; 
 }
-static int naut_wmemmove(lua_State *L){
-	lua_Number temp_return =wmemmove();
+static int naut_nk_get_base_region_by_num(lua_State *L){
+	unsigned int num = luaL_checkunsigned(L,1);
+	lua_Number temp_return =*(lua_Number *)nk_get_base_region_by_num(num);
 	lua_pushnumber(L, temp_return);
 	return 1; 
 }
@@ -1319,8 +1313,10 @@ static int naut_btowc(lua_State *L){
 	lua_pushnumber(L, temp_return);
 	return 1; 
 }
-static int naut_test_nemo(lua_State *L){
-	test_nemo();
+static int naut_msr_read(lua_State *L){
+	unsigned int msr = luaL_checkunsigned(L,1);
+	lua_Number temp_return =msr_read(msr);
+	lua_pushnumber(L, temp_return);
 	return 1; 
 }
 static int naut_wcsnrtombs(lua_State *L){
@@ -1338,10 +1334,9 @@ static int naut_main(lua_State *L){
 	main(mbd ,magic);
 	return 1; 
 }
-static int naut_nk_timer_handler(lua_State *L){
-	struct excp_entry_state * excp = luaL_checkunsigned(L,1);
-	long unsigned int vec = luaL_checkunsigned(L,2);
-	lua_Number temp_return =nk_timer_handler(excp ,vec);
+static int naut_ischar(lua_State *L){
+	unsigned char * str = luaL_checkstring(L,1);
+	lua_Number temp_return =ischar(str);
 	lua_pushnumber(L, temp_return);
 	return 1; 
 }
@@ -1438,8 +1433,9 @@ static int naut_pci_init(lua_State *L){
 	lua_pushnumber(L, temp_return);
 	return 1; 
 }
-static int naut___stack_chk_fail(lua_State *L){
-	lua_Number temp_return =__stack_chk_fail();
+static int naut_remove(lua_State *L){
+	const char * path = luaL_checkstring(L,1);
+	lua_Number temp_return =remove(path);
 	lua_pushnumber(L, temp_return);
 	return 1; 
 }
@@ -1528,10 +1524,11 @@ static int naut_nk_condvar_bcast(lua_State *L){
 	lua_pushnumber(L, temp_return);
 	return 1; 
 }
-static int naut_log(lua_State *L){
-	double x = luaL_checknumber(L,1);
-	lua_Number temp_return =log(x);
-	lua_pushnumber(L, temp_return);
+static int naut___newlocale(lua_State *L){
+	int category_mask = luaL_checkint(L,1);
+	const char * locale = luaL_checkstring(L,2);
+	void * base = luaL_checkunsigned(L,3);
+
 	return 1; 
 }
 static int naut_nk_timer_init(lua_State *L){
@@ -1570,9 +1567,10 @@ static int naut_rand(lua_State *L){
 	lua_pushnumber(L, temp_return);
 	return 1; 
 }
-static int naut_ischar(lua_State *L){
-	unsigned char * str = luaL_checkstring(L,1);
-	lua_Number temp_return =ischar(str);
+static int naut_nk_timer_handler(lua_State *L){
+	struct excp_entry_state * excp = luaL_checkunsigned(L,1);
+	long unsigned int vec = luaL_checkunsigned(L,2);
+	lua_Number temp_return =nk_timer_handler(excp ,vec);
 	lua_pushnumber(L, temp_return);
 	return 1; 
 }
@@ -1698,6 +1696,11 @@ static int naut_fscanf(lua_State *L){
 	void * stream = luaL_checkunsigned(L,1);
 	const char * format = luaL_checkstring(L,2);
 	lua_Number temp_return =fscanf(stream ,format);
+	lua_pushnumber(L, temp_return);
+	return 1; 
+}
+static int naut___get_cpu_features(lua_State *L){
+	lua_Number temp_return =__get_cpu_features();
 	lua_pushnumber(L, temp_return);
 	return 1; 
 }
@@ -1933,8 +1936,8 @@ static int naut_strtof(lua_State *L){
 	lua_pushnumber(L, temp_return);
 	return 1; 
 }
-static int naut_writev(lua_State *L){
-	lua_Number temp_return =writev();
+static int naut_pthread_mutex_init(lua_State *L){
+	lua_Number temp_return =pthread_mutex_init();
 	lua_pushnumber(L, temp_return);
 	return 1; 
 }
@@ -2010,9 +2013,8 @@ static int naut_strict_strtoll(lua_State *L){
 	lua_pushnumber(L, temp_return);
 	return 1; 
 }
-static int naut_remove(lua_State *L){
-	const char * path = luaL_checkstring(L,1);
-	lua_Number temp_return =remove(path);
+static int naut___stack_chk_fail(lua_State *L){
+	lua_Number temp_return =__stack_chk_fail();
 	lua_pushnumber(L, temp_return);
 	return 1; 
 }
@@ -2212,8 +2214,12 @@ static int naut___nl_langinfo_l(lua_State *L){
 	lua_pushstring(L, temp_return);
 	return 1; 
 }
-static int naut_mbrtowc(lua_State *L){
-	lua_Number temp_return =mbrtowc();
+static int naut_fread(lua_State *L){
+	void * ptr = luaL_checkunsigned(L,1);
+	long unsigned int size = luaL_checkunsigned(L,2);
+	long unsigned int count = luaL_checkunsigned(L,3);
+	void * stream = luaL_checkunsigned(L,4);
+	lua_Number temp_return =fread(ptr ,size ,count ,stream);
 	lua_pushnumber(L, temp_return);
 	return 1; 
 }
@@ -2412,8 +2418,9 @@ static int naut_fflush(lua_State *L){
 	lua_pushnumber(L, temp_return);
 	return 1; 
 }
-static int naut___iswctype_l(lua_State *L){
-	lua_Number temp_return =__iswctype_l();
+static int naut_multiboot_get_phys_mem(lua_State *L){
+	long unsigned int mbd = luaL_checkunsigned(L,1);
+	lua_Number temp_return =multiboot_get_phys_mem(mbd);
 	lua_pushnumber(L, temp_return);
 	return 1; 
 }
@@ -2471,11 +2478,6 @@ static int naut_strstr(lua_State *L){
 }
 static int naut___strtof_l(lua_State *L){
 	lua_Number temp_return =__strtof_l();
-	lua_pushnumber(L, temp_return);
-	return 1; 
-}
-static int naut___strcoll_l(lua_State *L){
-	lua_Number temp_return =__strcoll_l();
 	lua_pushnumber(L, temp_return);
 	return 1; 
 }
@@ -2620,9 +2622,8 @@ static int naut_acos(lua_State *L){
 	lua_pushnumber(L, temp_return);
 	return 1; 
 }
-static int naut_nk_get_base_region_by_num(lua_State *L){
-	unsigned int num = luaL_checkunsigned(L,1);
-	lua_Number temp_return =*(lua_Number *)nk_get_base_region_by_num(num);
+static int naut_wmemmove(lua_State *L){
+	lua_Number temp_return =wmemmove();
 	lua_pushnumber(L, temp_return);
 	return 1; 
 }
@@ -2666,11 +2667,10 @@ static int naut_apic_bcast_deinit_iipi(lua_State *L){
 	apic_bcast_deinit_iipi(apic);
 	return 1; 
 }
-static int naut___newlocale(lua_State *L){
-	int category_mask = luaL_checkint(L,1);
-	const char * locale = luaL_checkstring(L,2);
-	void * base = luaL_checkunsigned(L,3);
-
+static int naut_log(lua_State *L){
+	double x = luaL_checknumber(L,1);
+	lua_Number temp_return =log(x);
+	lua_pushnumber(L, temp_return);
 	return 1; 
 }
 static int naut_fdopen(lua_State *L){
@@ -2814,12 +2814,8 @@ static int naut_nk_switch_to_vc_list(lua_State *L){
 	lua_pushnumber(L, temp_return);
 	return 1; 
 }
-static int naut_fread(lua_State *L){
-	void * ptr = luaL_checkunsigned(L,1);
-	long unsigned int size = luaL_checkunsigned(L,2);
-	long unsigned int count = luaL_checkunsigned(L,3);
-	void * stream = luaL_checkunsigned(L,4);
-	lua_Number temp_return =fread(ptr ,size ,count ,stream);
+static int naut_mbrtowc(lua_State *L){
+	lua_Number temp_return =mbrtowc();
 	lua_pushnumber(L, temp_return);
 	return 1; 
 }
@@ -2863,9 +2859,8 @@ static int naut_mm_boot_free_mem(lua_State *L){
 	mm_boot_free_mem(start ,size);
 	return 1; 
 }
-static int naut_multiboot_get_phys_mem(lua_State *L){
-	long unsigned int mbd = luaL_checkunsigned(L,1);
-	lua_Number temp_return =multiboot_get_phys_mem(mbd);
+static int naut___iswctype_l(lua_State *L){
+	lua_Number temp_return =__iswctype_l();
 	lua_pushnumber(L, temp_return);
 	return 1; 
 }
@@ -2920,34 +2915,10 @@ static int naut_mbsnrtowcs(lua_State *L){
 	lua_pushnumber(L, temp_return);
 	return 1; 
 }
-int* global; 
-int* ptrtest(int i)
-{
-	printk("\n in function &i %u",&i);
-	int *r;
-	global = (int *)(unsigned long long)i;
-	printk(" \t r = %d",global);
-	return global;
-}
-static int naut_ptrout(lua_State *L){
- void* in =lua_touserdata(L,1);
- printk("\n output %u",*(int *)in); 
- return 1;
-}
-
-static int naut_ptrtest(lua_State *L){
- int i=luaL_checkint(L,1);
- void* ret = ptrtest(i);
- //printk("\n test %d",ret);
- lua_pushlightuserdata(L,ret);
- return 1;
-}
 
 static const luaL_Reg nautlib[] = { 
-	{"ptrout",naut_ptrout},
-	{"ptrtest",naut_ptrtest},
 {"wcsftime", naut_wcsftime} ,
-{"mm_boot_reserve_mem", naut_mm_boot_reserve_mem} ,
+{"__strftime_l", naut___strftime_l} ,
 {"fclose", naut_fclose} ,
 {"pthread_mutex_lock", naut_pthread_mutex_lock} ,
 {"nk_condvar_test", naut_nk_condvar_test} ,
@@ -2957,16 +2928,17 @@ static const luaL_Reg nautlib[] = {
 {"nk_dequeue_first_atomic", naut_nk_dequeue_first_atomic} ,
 {"mm_boot_free_vmem", naut_mm_boot_free_vmem} ,
 {"nk_condvar_destroy", naut_nk_condvar_destroy} ,
+//{"apic_timer_setup", naut_apic_timer_setup} ,
 {"mktime", naut_mktime} ,
 {"init", naut_init} ,
 {"nk_htable_count", naut_nk_htable_count} ,
 {"disable_all_events", naut_disable_all_events} ,
-{"__strftime_l", naut___strftime_l} ,
+{"mm_boot_reserve_mem", naut_mm_boot_reserve_mem} ,
 {"strict_strtoul", naut_strict_strtoul} ,
 {"nk_enqueue_keycode", naut_nk_enqueue_keycode} ,
 {"nk_switch_to_prev_vc", naut_nk_switch_to_prev_vc} ,
 {"vga_init_screen", naut_vga_init_screen} ,
-{"msr_read", naut_msr_read} ,
+{"test_nemo", naut_test_nemo} ,
 {"nk_sched_init", naut_nk_sched_init} ,
 {"nk_stack_dump", naut_nk_stack_dump} ,
 {"nk_my_numa_node", naut_nk_my_numa_node} ,
@@ -2990,7 +2962,6 @@ static const luaL_Reg nautlib[] = {
 {"clock", naut_clock} ,
 {"__mm_boot_alloc", naut___mm_boot_alloc} ,
 {"nk_htable_remove", naut_nk_htable_remove} ,
-{"abs", naut_abs} ,
 {"apic_init", naut_apic_init} ,
 {"nk_htable_iter_remove", naut_nk_htable_iter_remove} ,
 {"__freelocale", naut___freelocale} ,
@@ -3007,11 +2978,11 @@ static const luaL_Reg nautlib[] = {
 {"mf_handler", naut_mf_handler} ,
 {"realloc", naut_realloc} ,
 {"nk_thread_run", naut_nk_thread_run} ,
-{"nk_core_barrier_arrive", naut_nk_core_barrier_arrive} ,
+{"__strcoll_l", naut___strcoll_l} ,
 {"printf", naut_printf} ,
 {"scnprintf", naut_scnprintf} ,
 {"printk", naut_printk} ,
-{"pthread_mutex_init", naut_pthread_mutex_init} ,
+{"writev", naut_writev} ,
 {"__thread_fork", naut___thread_fork} ,
 {"nemo_event_notify", naut_nemo_event_notify} ,
 {"nk_tls_test", naut_nk_tls_test} ,
@@ -3029,15 +3000,16 @@ static const luaL_Reg nautlib[] = {
 {"strerror", naut_strerror} ,
 {"nk_vc_getchar_extended", naut_nk_vc_getchar_extended} ,
 {"localtime", naut_localtime} ,
-{"__get_cpu_features", naut___get_cpu_features} ,
+{"nk_core_barrier_arrive", naut_nk_core_barrier_arrive} ,
 {"mm_boot_free", naut_mm_boot_free} ,
 {"nk_htable_get_iter_key", naut_nk_htable_get_iter_key} ,
 {"strtold", naut_strtold} ,
 {"abort", naut_abort} ,
 {"fprintf", naut_fprintf} ,
-{"towupper", naut_towupper} ,
-{"feof", naut_feof} ,
 {"tan", naut_tan} ,
+{"feof", naut_feof} ,
+{"towupper", naut_towupper} ,
+//{"nk_need_resched", naut_nk_need_resched} ,
 {"nk_get_parent_tid", naut_nk_get_parent_tid} ,
 {"simple_strtoull", naut_simple_strtoull} ,
 {"clearerr", naut_clearerr} ,
@@ -3064,14 +3036,14 @@ static const luaL_Reg nautlib[] = {
 {"nk_htable_insert", naut_nk_htable_insert} ,
 {"wctob", naut_wctob} ,
 {"atan2", naut_atan2} ,
-{"wmemmove", naut_wmemmove} ,
+{"nk_get_base_region_by_num", naut_nk_get_base_region_by_num} ,
 {"mb_get_first_hrt_addr", naut_mb_get_first_hrt_addr} ,
 {"btowc", naut_btowc} ,
-{"test_nemo", naut_test_nemo} ,
+{"msr_read", naut_msr_read} ,
 {"wcsnrtombs", naut_wcsnrtombs} ,
 {"serial_init", naut_serial_init} ,
 {"main", naut_main} ,
-{"nk_timer_handler", naut_nk_timer_handler} ,
+{"ischar", naut_ischar} ,
 {"nk_vc_scrollup_specific", naut_nk_vc_scrollup_specific} ,
 {"mm_boot_kmem_init", naut_mm_boot_kmem_init} ,
 {"__uselocale", naut___uselocale} ,
@@ -3088,7 +3060,7 @@ static const luaL_Reg nautlib[] = {
 {"nk_print_regs", naut_nk_print_regs} ,
 {"nk_condvar_init", naut_nk_condvar_init} ,
 {"pci_init", naut_pci_init} ,
-{"__stack_chk_fail", naut___stack_chk_fail} ,
+{"remove", naut_remove} ,
 {"nk_thread_queue_wake_one", naut_nk_thread_queue_wake_one} ,
 {"nk_vc_print", naut_nk_vc_print} ,
 {"multiboot_get_sys_ram", naut_multiboot_get_sys_ram} ,
@@ -3104,14 +3076,14 @@ static const luaL_Reg nautlib[] = {
 {"ferror", naut_ferror} ,
 {"free", naut_free} ,
 {"nk_condvar_bcast", naut_nk_condvar_bcast} ,
-{"log", naut_log} ,
+{"__newlocale", naut___newlocale} ,
 {"nk_timer_init", naut_nk_timer_init} ,
 {"nk_rb_replace_node", naut_nk_rb_replace_node} ,
 {"nk_vc_printf", naut_nk_vc_printf} ,
 {"apic_read_timer", naut_apic_read_timer} ,
 {"msr_write", naut_msr_write} ,
 {"rand", naut_rand} ,
-{"ischar", naut_ischar} ,
+{"nk_timer_handler", naut_nk_timer_handler} ,
 {"ldexp", naut_ldexp} ,
 {"nk_vc_handle_input", naut_nk_vc_handle_input} ,
 {"nk_queue_create", naut_nk_queue_create} ,
@@ -3133,6 +3105,7 @@ static const luaL_Reg nautlib[] = {
 {"buddy_dump_mempool", naut_buddy_dump_mempool} ,
 {"fpu_init", naut_fpu_init} ,
 {"fscanf", naut_fscanf} ,
+{"__get_cpu_features", naut___get_cpu_features} ,
 {"wcscmp", naut_wcscmp} ,
 {"idle", naut_idle} ,
 {"__assert_fail", naut___assert_fail} ,
@@ -3170,7 +3143,7 @@ static const luaL_Reg nautlib[] = {
 {"apic_deinit_iipi", naut_apic_deinit_iipi} ,
 {"strtod", naut_strtod} ,
 {"strtof", naut_strtof} ,
-{"writev", naut_writev} ,
+{"pthread_mutex_init", naut_pthread_mutex_init} ,
 {"frexp", naut_frexp} ,
 {"fputs", naut_fputs} ,
 {"strtox", naut_strtox} ,
@@ -3183,7 +3156,7 @@ static const luaL_Reg nautlib[] = {
 {"strsep", naut_strsep} ,
 {"fileno", naut_fileno} ,
 {"strict_strtoll", naut_strict_strtoll} ,
-{"remove", naut_remove} ,
+{"__stack_chk_fail", naut___stack_chk_fail} ,
 {"apic_send_iipi", naut_apic_send_iipi} ,
 {"apic_self_ipi", naut_apic_self_ipi} ,
 {"strncmp", naut_strncmp} ,
@@ -3218,7 +3191,7 @@ static const luaL_Reg nautlib[] = {
 {"nk_create_htable_iter", naut_nk_create_htable_iter} ,
 {"putc", naut_putc} ,
 {"__nl_langinfo_l", naut___nl_langinfo_l} ,
-{"mbrtowc", naut_mbrtowc} ,
+{"fread", naut_fread} ,
 {"mm_boot_kmem_cleanup", naut_mm_boot_kmem_cleanup} ,
 {"nk_thread_destroy", naut_nk_thread_destroy} ,
 {"mbsrtowcs", naut_mbsrtowcs} ,
@@ -3254,7 +3227,7 @@ static const luaL_Reg nautlib[] = {
 {"nk_rb_next", naut_nk_rb_next} ,
 {"vga_puts", naut_vga_puts} ,
 {"fflush", naut_fflush} ,
-{"__iswctype_l", naut___iswctype_l} ,
+{"multiboot_get_phys_mem", naut_multiboot_get_phys_mem} ,
 {"tmpnam", naut_tmpnam} ,
 {"strxfrm", naut_strxfrm} ,
 {"__strtod_l", naut___strtod_l} ,
@@ -3266,7 +3239,6 @@ static const luaL_Reg nautlib[] = {
 {"nk_vc_scrollup", naut_nk_vc_scrollup} ,
 {"strstr", naut_strstr} ,
 {"__strtof_l", naut___strtof_l} ,
-{"__strcoll_l", naut___strcoll_l} ,
 {"freopen", naut_freopen} ,
 {"mm_boot_get_region", naut_mm_boot_get_region} ,
 {"strcmp", naut_strcmp} ,
@@ -3290,7 +3262,7 @@ static const luaL_Reg nautlib[] = {
 {"__towupper_l", naut___towupper_l} ,
 {"nk_vc_get_scancode", naut_nk_vc_get_scancode} ,
 {"acos", naut_acos} ,
-{"nk_get_base_region_by_num", naut_nk_get_base_region_by_num} ,
+{"wmemmove", naut_wmemmove} ,
 {"nk_barrier_destroy", naut_nk_barrier_destroy} ,
 {"setlocale", naut_setlocale} ,
 {"nemo_init", naut_nemo_init} ,
@@ -3298,7 +3270,7 @@ static const luaL_Reg nautlib[] = {
 {"__fxstat64", naut___fxstat64} ,
 {"fopen", naut_fopen} ,
 {"apic_bcast_deinit_iipi", naut_apic_bcast_deinit_iipi} ,
-{"__newlocale", naut___newlocale} ,
+{"log", naut_log} ,
 {"fdopen", naut_fdopen} ,
 {"wcslen", naut_wcslen} ,
 {"smp_early_init", naut_smp_early_init} ,
@@ -3323,7 +3295,7 @@ static const luaL_Reg nautlib[] = {
 {"sscanf", naut_sscanf} ,
 {"syscall", naut_syscall} ,
 {"nk_switch_to_vc_list", naut_nk_switch_to_vc_list} ,
-{"fread", naut_fread} ,
+{"mbrtowc", naut_mbrtowc} ,
 {"wctype", naut_wctype} ,
 {"kbd_translate", naut_kbd_translate} ,
 {"kbd_reset", naut_kbd_reset} ,
@@ -3331,7 +3303,7 @@ static const luaL_Reg nautlib[] = {
 {"floor", naut_floor} ,
 {"gettext", naut_gettext} ,
 {"mm_boot_free_mem", naut_mm_boot_free_mem} ,
-{"multiboot_get_phys_mem", naut_multiboot_get_phys_mem} ,
+{"__iswctype_l", naut___iswctype_l} ,
 {"kbd_deinit", naut_kbd_deinit} ,
 {"ioapic_init", naut_ioapic_init} ,
 {"arch_numa_init", naut_arch_numa_init} ,
