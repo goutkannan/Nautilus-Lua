@@ -115,6 +115,8 @@ value returned by the function.
 
 `=naut.msr_read(12)`
 
+Here is an a example of a Lua script file that contains a mixture of native Lua and call to Nautilus function. This will enable us 
+in writing a full fledge script that involves Lua programming as well as testing Nautilus functionalitie. 
 
 
 ![Sample Test](https://github.com/goutkannan/LUA-for-Nautilus/blob/master/lua_script.JPG)
