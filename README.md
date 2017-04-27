@@ -92,16 +92,30 @@ In the below sample, we show how to call a math function viz. abs()
 From the command `math.abs(param)` we can understand that `abs` is a function in the library `math`. 
 We have implemented the nautilus test framework in the similar manner.
 
+So a typical call to nautilus' function_to_test will look like `naut.function_to_test(**args)` 
+In order to get the return value back append the command with an '=' sign. 
+
+
 
 Inorder to execute a pre-loaded lua script use the command `lua -i scrip_name.lua` 
 ![sample_script](https://github.com/goutkannan/LUA-for-Nautilus/blob/master/lua_execute.JPG)
 
-So a typical call to nautilus' function_to_test will look like `naut.function_to_test(**args)` 
-In order to get the return value back append the command with an '=' sign. 
+
 
 ## Sample test for Nautilus functions
 
 Here are few sample nautilus functions that can be tested using lua interpreter.
+Say, we need to call Nautilus' function `nk_tls_test()` the command to call from lua shell is:
+
+`naut. nk_tls_test()`
+
+As nk_tls_test's return type is void we are not retreiving the output from Lua. Incase of function
+`msr_read` which takes in a uin32_t and returns a long unin32_t, We use the '=' operater to retrieve tthe
+value returned by the function. 
+
+`=naut.msr_read(12)`
+
+
 
 ![Sample Test](https://github.com/goutkannan/LUA-for-Nautilus/blob/master/lua_script.JPG)
 
