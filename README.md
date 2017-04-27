@@ -57,6 +57,10 @@ First, configure Nautilus by running
 In order to pre-load lua with Nautilus, choose the following options 
 Under the `Lua for Nautilus` categor, select the options 1.Lua Load 2.Lua to test by pressing the `y` button. After sleceting the desired configurations exit the menuconfig. In the prompt select `yes` to save the chosen configuration. 
 
+![Menu_init](https://github.com/goutkannan/LUA-for-Nautilus/blob/master/Topmenu.JPG)
+
+
+![Second_level](https://github.com/goutkannan/LUA-for-Nautilus/blob/master/Menu.JPG)
 
 Select any options you require, then run `make` to build the HRT binary image. To make a bootable CD-ROM, 
 run `make isoimage`. 
