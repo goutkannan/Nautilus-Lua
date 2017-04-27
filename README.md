@@ -104,6 +104,7 @@ In order to get the return value back append the command with an '=' sign.
 
 
 Inorder to execute a pre-loaded lua script use the command `lua -i scrip_name.lua` 
+
 ![sample_script](https://github.com/goutkannan/LUA-for-Nautilus/blob/master/lua_execute.JPG)
 
 
