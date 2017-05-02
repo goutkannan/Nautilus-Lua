@@ -57,10 +57,10 @@ First, configure Nautilus by running
 In order to pre-load lua with Nautilus, choose the following options 
 Under the `Lua for Nautilus` categor, select the options 1.Lua Load 2.Lua to test by pressing the `y` button. 
 
-![Menu_init](https://github.com/goutkannan/Nautilus-LUA/tree/master/img/Topmenu.JPG)
+![Menu_init](https://github.com/goutkannan/Nautilus-LUA/blob/master/img/Topmenu.JPG)
 
 
-![Second_level](https://github.com/goutkannan/Nautilus-LUA/tree/master/img/Menu.JPG)
+![Second_level](https://github.com/goutkannan/Nautilus-LUA/blob/master/img/Menu.JPG)
 
 After selecting the desired configurations exit the menuconfig. In the prompt select `yes` to save the chosen configuration. 
 
@@ -89,11 +89,11 @@ Nautilus has multicore support, so this will also work just fine:
 
 Lua boots up with  `root-shell>` , Enter the command `lua` to invoke the Lua interpreter.The shell will load with Lua interpreter waiting for input. 
 
-![init screen](https://github.com/goutkannan/Nautilus-Lua/tree/master/img/Lua_init_1.JPG)
+![init screen](https://github.com/goutkannan/Nautilus-Lua/blob/master/img/Lua_init_1.JPG)
 
 In the below sample, we show how to call a math function viz. abs() 
 
-![sample math](https://github.com/goutkannan/Nautilus-Lua/tree/master/img/sample_math.JPG)
+![sample math](https://github.com/goutkannan/Nautilus-Lua/blob/master/img/sample_math.JPG)
 
 From the command `math.abs(param)` we can understand that `abs` is a function in the library `math`. 
 We have implemented the nautilus test framework in the similar manner.
@@ -105,7 +105,7 @@ In order to get the return value back append the command with an '=' sign.
 
 Inorder to execute a pre-loaded lua script use the command `lua -i scrip_name.lua` 
 
-![sample_script](https://github.com/goutkannan/Nautilus-Lua/tree/master/img/lua_execute.JPG)
+![sample_script](https://github.com/goutkannan/Nautilus-Lua/blob/master/img/lua_execute.JPG)
 
 
 
@@ -129,7 +129,7 @@ in writing a full fledge script that involves Lua programming as well as testing
 <i>lua_script.txt</i>.</p>
 
 
-![Sample Test](https://github.com/goutkannan/Nautilus-Lua/tree/master/img/lua_script.JPG)
+![Sample Test](https://github.com/goutkannan/Nautilus-Lua/blob/master/lua_script.JPG)
 
 
 # Resources
