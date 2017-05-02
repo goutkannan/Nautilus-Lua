@@ -123,7 +123,8 @@ value returned by the function.
 `=naut.msr_read(12)`
 
 Here is an a example of a Lua script file that contains a mixture of native Lua and call to Nautilus function. This will enable us 
-in writing a full fledge script that involves Lua programming as well as testing Nautilus functionalitie. 
+in writing a full fledge script that involves Lua programming as well as testing Nautilus functionalities.
+ 
 <p> The default lua script file is located in the base directory with the name 
  <i>lua_script.txt</i>.</p>
 
