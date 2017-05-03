@@ -129,7 +129,7 @@ in writing a full fledge script that involves Lua programming as well as testing
 <i>lua_script.txt</i>.</p>
 
 
-![Sample Test](https://github.com/goutkannan/Nautilus-Lua/blob/master/lua_script.JPG)
+![Sample Test](https://github.com/goutkannan/Nautilus-Lua/blob/master/img/lua_script.JPG)
 
 
 # Resources
