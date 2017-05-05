@@ -320,7 +320,7 @@ COMMON_FLAGS := -O2 \
 
 CXXFLAGS := $(COMMON_FLAGS) \
 			-fno-exceptions \
-			-fno-rtti 
+			-fno-rtti
 			#-mno-3dnow
 			#-mno-sse \
 			#-mno-sse2 \
@@ -685,8 +685,7 @@ $(BIN_NAME): $(nautilus)
 nautilus: $(BIN_NAME)
 define lua__
 	@python parse_gdb.py
-	$(CXXFLAGS) -Dlua_test
-	$(call if_changed_rule,nautilus__)
+
 endef
 
 
@@ -694,6 +693,7 @@ isoimage: nautilus
 ifdef NAUT_CONFIG_LUA_TEST
 	@echo "before try"
 	$(call lua__)
+	$(call if_changed_rule,nautilus__)
 endif
 	cp $(BIN_NAME) iso/boot
 	$(GRUBMKRESCUE) -o $(ISO_NAME) iso

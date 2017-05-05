@@ -32,6 +32,6 @@ obj-y += lmem.o\
 	 lzio.o  \
 	 lundump.o \
 
-ifdef lua_test
+ifdef NAUT_CONFIG_LUA_TEST
 obj-y += lnautlib.o
 endif

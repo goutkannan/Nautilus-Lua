@@ -2,6 +2,7 @@ cmd_src/lua_src/linit.o := gcc -Wp,-MD,src/lua_src/.linit.o.d   -D__NAUTILUS__ -
 
 deps_src/lua_src/linit.o := \
   src/lua_src/linit.c \
+    $(wildcard include/config/lua/test.h) \
   include/autoconf.h \
     $(wildcard include/config/x86/64/host.h) \
     $(wildcard include/config/xeon/phi.h) \
@@ -55,7 +56,6 @@ deps_src/lua_src/linit.o := \
     $(wildcard include/config/ata.h) \
     $(wildcard include/config/ext2/filesystem/driver.h) \
     $(wildcard include/config/load/lua.h) \
-    $(wildcard include/config/lua/test.h) \
   include/nautilus/libccompat.h \
   include/nautilus/nautilus.h \
   include/nautilus/percpu.h \

@@ -27,7 +27,6 @@
 #include "lua/lualib.h"
 #include "lua/lauxlib.h"
 #endif
-
 #include <nautilus/nautilus.h>
 #include <nautilus/shell.h>
 #include <nautilus/vc.h>

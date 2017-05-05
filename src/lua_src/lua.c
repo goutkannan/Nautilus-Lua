@@ -20,6 +20,8 @@
 #include <nautilus/shell.h>
 #ifdef NAUT_CONFIG_LOAD_LUA
 #include <dev/lua_script.h>
+
+#define lua_test 1
 #endif
 
 #if !defined(LUA_PROMPT)
