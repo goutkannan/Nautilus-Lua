@@ -495,7 +495,6 @@ static int pmain (lua_State *L) {
   script = collectargs(argv, args);
  else 
 	script =0; 
- printk("\n script %d",script);
 
   if (script < 0) {  /* invalid arg? */
      print_usage(argv[-script]);
@@ -530,7 +529,6 @@ static int pmain (lua_State *L) {
       dotty(L);
     else if (script == 0 && !args[has_e] && !args[has_v]) \
     {  /* no arguments? */
-       printk("\n in for no args");
        if (lua_stdin_is_tty()) 
        {
 	      
@@ -550,8 +548,6 @@ int lua_main (int argc, char **argv) {
  int status, result;
   lua_State *L = luaL_newstate();   /*create state */
   
-	printk("\n LUA-MAIN | new state created. argc %d",argc);
-  printk("\n LUA-MAIN | new state created. args %s",argv[0]);
   if (L == NULL) {
     l_message(argv[0], "cannot create state: not enough memory");
     return EXIT_FAILURE;
@@ -562,7 +558,6 @@ int lua_main (int argc, char **argv) {
   //printk("\n LUA-MAIN | lua_pushfunction Success. ");
   lua_pushinteger(L, argc);
  // printk("\n LUA-MAIN | lua_pushinteger Success. ");  
-  printk("\n lua main arg %s",argv[1]);
   lua_pushlightuserdata(L, argv);  /*2nd argument */
  // printk("\n LUA-MAIN | lua_pushlightuserdata Success .");
   status = lua_pcall(L, 2, 1, 0);// -- temp call

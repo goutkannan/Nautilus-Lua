@@ -72,7 +72,6 @@ static int handle_cmd(char *buf, int n)
 		 
 	  
 	  }
-	  printk("\n %d .... %s",count,buff[0]);
 	  int st = lua_main(count,buff);
 	  return 0;
 

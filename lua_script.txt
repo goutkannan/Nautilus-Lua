@@ -1,5 +1,4 @@
-print('From code')
-print('second line')
+print('Test Starts')
 
 function max(num1, num2)
 
@@ -12,8 +11,9 @@ function max(num1, num2)
    return result; 
 end
 
+print('Call for function- max(5,6)')
 
 print(max(5,6))
-print(naut.perf_report())
 
+print("Calling boot_num_regions() of nautilus ")
 print(naut.mm_boot_num_regions())

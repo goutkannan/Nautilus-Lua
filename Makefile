@@ -681,17 +681,23 @@ endif
 $(BIN_NAME): $(nautilus)
 	$(call if_changed_rule,nautilus__)
 
+     
 nautilus: $(BIN_NAME)
+define lua__
+	@python parse_gdb.py
+	$(CXXFLAGS) -Dlua_test
+	$(call if_changed_rule,nautilus__)
+endef
+
 
 isoimage: nautilus
+ifdef NAUT_CONFIG_LUA_TEST
+	@echo "before try"
+	$(call lua__)
+endif
 	cp $(BIN_NAME) iso/boot
 	$(GRUBMKRESCUE) -o $(ISO_NAME) iso
 
-
-lua-dev: nautilus
-	
-	@python parse_gdb.py 
-	$(call if_changed_rule,nautilus__)
 
 nautilus.asm: $(BIN_NAME)
 	$(OBJDUMP) --disassemble $< > $@
