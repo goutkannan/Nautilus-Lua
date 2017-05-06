@@ -75,7 +75,7 @@ static int handle_cmd(char *buf, int n)
 	  return 0;
 
   #else
-      nk_vc_prinf("\n Please enable Lua using make menuconfig");
+      printk("\n Please enable Lua using make menuconfig");
       return 1;
   #endif
 

@@ -1,7 +1,7 @@
 /*
  * Automatically generated C config: don't edit
  * Nautilus version: 
- * Fri May  5 22:35:43 2017
+ * Fri May  5 22:44:32 2017
  */
 #define AUTOCONF_INCLUDED
 
@@ -100,4 +100,4 @@
  * Lua interpreter support 
  */
 #define NAUT_CONFIG_LOAD_LUA 1
-#define NAUT_CONFIG_LUA_TEST 1
+#undef NAUT_CONFIG_LUA_TEST
