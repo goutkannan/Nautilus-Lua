@@ -693,7 +693,8 @@ isoimage: nautilus
 ifdef NAUT_CONFIG_LUA_TEST
 	@echo "before try"
 	$(call lua__)
-	$(call if_changed_rule,nautilus__)
+	@make
+	@python post_process.py
 endif
 	cp $(BIN_NAME) iso/boot
 	$(GRUBMKRESCUE) -o $(ISO_NAME) iso

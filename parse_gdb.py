@@ -21,65 +21,26 @@ except :
     print("Can't generate elf log")
 
 
+def pre_process_files():
+    
+    FILES = ["./src/lua_src/linit.c","./include/lua/lualib.h","./src/lua_src/Makefile"]
 
-
-LUA_SRC_PATH ="src/lua_src/"
-LIBNAME="lnautlib.c"
-
-def update_files_when_reqd():
-    with open("./src/lua_src/linit.c","r") as cfile:
-        alllines=[]
-        for line in cfile.readlines():
-            #print(">",line)
-            if "{LUA_NAUTLIBNAME, luaopen_naut}" in line:
-                line=""
-
-            if "{LUA_MATHLIBNAME, luaopen_math}" in line:
-
-                line += '  '+"{LUA_NAUTLIBNAME, luaopen_naut},\n"
-             
-
-            alllines.append(line)
-
-    with open("./src/lua_src/linit.c","w") as cwf:
-        cwf.writelines(alllines)
-
-
-    with open("./include/lua/lualib.h","r") as cfile:
-        alllines=[]
-        for line in cfile.readlines():
-            #print(">",line)
-            if "#define  LUA_NAUTLIBNAME  \"naut\"" in line:
-                line=""
-            if "LUAMOD_API int (luaopen_naut) (lua_State *L);" in line:
-                line=""
-
-            if "LUAMOD_API int (luaopen_package) (lua_State *L)" in line:
-
-                line += "\n#define  LUA_NAUTLIBNAME  \"naut\"\n"+"LUAMOD_API int (luaopen_naut) (lua_State *L);\n"
+    for files_to_modified in FILES:
+        with open(files_to_modified,"r") as cfile:
+            alllines=[]
+            for line in cfile.readlines():
                 
+                if "ifdef LUA_TEST" in line:
+                    line=line.replace("ifdef","ifndef")
 
-            alllines.append(line)
+                 
 
-    with open("./include/lua/lualib.h","w") as cwf:
-        cwf.writelines(alllines)
+                alllines.append(line)
 
-    flag=0
-    make_all_lines=[]
-    with open("./src/lua_src/Makefile","r") as makefile:
-        make_all_lines=[line for line in makefile.readlines() if line.strip()] 
-        last_line = make_all_lines[-1]
+        with open(files_to_modified,"w") as cwf:
+            cwf.writelines(alllines)
 
-        if "lnautlib.o" not in last_line:
-            make_all_lines[-1] = make_all_lines[-1].replace("\n","\\\n")
-
-            make_all_lines.append("\t lnautlib.o")
-            flag=1
-
-    if flag==1:
-        with open("./src/lua_src/Makefile","w") as write_makefile:
-            write_makefile.writelines(make_all_lines)
-
+               
 
 
 def get_tags(full_line,dtype="base"):
@@ -355,10 +316,31 @@ def function_body(func_name,ret_type="void",params="void"):
 """
 Driver code to load the dictionary and generate the code .c
 
+Step.1 Preprocessing of the Makefile, luainit.c,lualib.h to in include lnaulib.c
+Step.2 Load all the base types onto a dictionary
+Step.3 Get the list of function calls with their names, return type and formal parameters 
+Step.4 Resolve the known types of functions and log the unkown function calls.
+Step.5 Automate the code generation for all the resolved 
+
+"""
+
+"""
+Step.1 
+Preprocessing of the Makefile, luainit.c,lualib.h to in include lnaulib.c
+"""
+pre_process_files()
+
+"""
+Step.2
+Load all the base types onto a dictionary
 """
 
 load_data_from_log()
 
+"""
+Step.3
+Get the list of function calls with their names, return type and formal parameters 
+"""
 
 tmpfunction_dataDict, filtered = get_function_sign()
 function_dataDict = defaultdict(lambda: {})
@@ -367,6 +349,11 @@ left_out_functions= []
 #print(type(function_dataDict))
 
 ffilter = ['int','double','float','*','void','char *']
+
+"""
+Step.4 Resolve the known types of functions and log the unkown function calls.
+"""
+
 for key,value in tmpfunction_dataDict.items():
     #print(value)
     functName=value.get("name","")
@@ -457,6 +444,10 @@ with open("resloved_functions.txt","w") as fp:
         fp.write(str(k)+": "+str(v)+"\n")
     fp.close()
 
+"""
+Step.5 Automate the code generation for all the resolved 
+
+"""
 head = '#include <nautilus/naut_types.h> \n\
 #include <nautilus/libccompat.h>\n\
 #include <nautilus/math.h>\n\
