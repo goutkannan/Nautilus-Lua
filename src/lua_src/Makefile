@@ -1,3 +1,4 @@
+
 obj-y += lmem.o\
 	 lstate.o \
 	 ldebug.o \
@@ -32,6 +33,7 @@ obj-y += lmem.o\
 	 lzio.o  \
 	 lundump.o \
 
-ifdef LUA_TEST
+ifeq ($(LUA_BUILD_FLAG),1)
+CFLAGS+= -DLUA_BUILD_FLAG
 obj-y += lnautlib.o
 endif

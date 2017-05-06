@@ -37,7 +37,11 @@
 #include <nautilus/vmm.h>
 #endif
 
-
+/*
+ *Added additional code to handle_cmd function to handle LUA command 
+ *and LUA -i <file>.lua command 
+ *
+ */
 static int handle_cmd(char *buf, int n)
 {
   char name[n];
@@ -75,7 +79,7 @@ static int handle_cmd(char *buf, int n)
 	  return 0;
 
   #else
-      printk("\n Please enable Lua using make menuconfig");
+      nk_vc_printf("\n Please enable Lua using make menuconfig");
       return 1;
   #endif
 

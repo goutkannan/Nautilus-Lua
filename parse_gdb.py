@@ -1,8 +1,26 @@
+""""
+
+Author : Goutham Kannan <gkannan1@hawk.iit.edu>
+         Imran Ali Usmani<iusmani@hawk.iit.edu>
+
+Details: 
+
+Step.1 Generate the log file from the output of the readELF command
+Step.2 Load all the base types onto a dictionary
+Step.3 Get the list of function calls with their names, return type and formal parameters 
+Step.4 Resolve the known types of functions and log the unkown function calls.
+Step.5 Automate the code generation for all the resolved 
+
+
+""""
+
+
+
 import re
 import ast
 import os
 from parse_gdb_functions import *
-print("in")
+
 #functions addded to this list would not be added into .c file 
 functions_to_remove=["panic"]
 types_to_ignore=["struct __va_list_tag *"]
@@ -12,35 +30,20 @@ logError= []
 typedef_names={}
 data_type={'0':["",None],'1':["void","0"]} 
 
-""" Executing the readelf command and storing the details in a file """
-try:
-
-    fileName ="full_log.txt"
-    os.system("readelf -wi nautilus.bin > "+fileName)
-except :
-    print("Can't generate elf log")
-
 
 def pre_process_files():
-    
-    FILES = ["./src/lua_src/linit.c","./include/lua/lualib.h","./src/lua_src/Makefile"]
+    """ 
+    Executing the readelf command and storing the details 
+    in a file .
 
-    for files_to_modified in FILES:
-        with open(files_to_modified,"r") as cfile:
-            alllines=[]
-            for line in cfile.readlines():
-                
-                if "ifdef LUA_TEST" in line:
-                    line=line.replace("ifdef","ifndef")
+    """
+    try:
 
-                 
+        fileName ="full_log.txt"
+        os.system("readelf -wi nautilus.bin > "+fileName)
+    except :
+        print("Can't generate elf log")
 
-                alllines.append(line)
-
-        with open(files_to_modified,"w") as cwf:
-            cwf.writelines(alllines)
-
-               
 
 
 def get_tags(full_line,dtype="base"):
@@ -64,13 +67,24 @@ def get_tags(full_line,dtype="base"):
 
 
 def set_tags(key,tag,tag_type=0):
-        #print(m.group(1))
+    """
+    Args: Key=Address of the line in the log file
+    tag= tag_type found inside the block whose base address 
+    is Key. 
+    tag_type = Dife primitive or
+    """
         
         data_type[str(key)] = [str(tag),tag_type]
 
 
 def resolve(label_address):
-    #print("in resolve")
+  """ 
+  Given a address, resolve to the most primitive type
+  Eg. 
+  0011--> dict[0011]=0002--> dict[0002] = int --> STOP
+  0012--> dict[0012]=(*) 0002 --> dict[002] = int * --> STOP 
+
+  """
     key= label_address
     string = []
     try:
@@ -98,6 +112,12 @@ def resolve(label_address):
 
 
 def load_data_from_log(filename=fileName):
+    """
+    Arg= logfilepath
+    The deatils regarding the implementation of this algorithm is
+    explained in Developer Document. 
+
+    """
     count =0
     lookBack = 0
     pattern_DW_line ="\s+<\w+><(.+)>:*\s+([\w\s]*:)(.*)"
@@ -234,6 +254,10 @@ def load_data_from_log(filename=fileName):
 
 def resolve_lua_type(data_type):
     #print("in as",data_type)
+    """
+    arg: data_type= C data types like int,char** etc.
+    Maps the C type to lua input types.
+    """ 
 
     if "struct" not in data_type:
         if "*" in data_type and "char" not in data_type:
@@ -261,6 +285,12 @@ def resolve_lua_type(data_type):
         return "checkunsigned"
 
 def resolve_lua_ret_type(data_type):
+    """
+    arg: data_type= C data types like int,char** etc.
+    Maps the C type to lua output types.
+
+    """
+    
     if re.match(".*char\s*\*",data_type):
         return "lua_pushstring"
     elif re.match("void",data_type):
@@ -270,6 +300,12 @@ def resolve_lua_ret_type(data_type):
 
 
 def function_body(func_name,ret_type="void",params="void"):
+    """
+    Logic used to generate the static function body, it involves
+    poping the arguments from the stack, call the corresponding 
+    function of nautilus, pushing the result into the lua stack 
+    For the details of the implementation refer the developer document
+    """
     idx=1
     code="\n"
     pass_variable=[]
@@ -313,10 +349,12 @@ def function_body(func_name,ret_type="void",params="void"):
 
     return code
 
-"""
-Driver code to load the dictionary and generate the code .c
 
-Step.1 Preprocessing of the Makefile, luainit.c,lualib.h to in include lnaulib.c
+
+"""
+
+Driver code to load the dictionary and generate the code .c
+Step.1 Generate the log file from the output of the readELF command
 Step.2 Load all the base types onto a dictionary
 Step.3 Get the list of function calls with their names, return type and formal parameters 
 Step.4 Resolve the known types of functions and log the unkown function calls.
@@ -324,9 +362,10 @@ Step.5 Automate the code generation for all the resolved
 
 """
 
+
 """
-Step.1 
-Preprocessing of the Makefile, luainit.c,lualib.h to in include lnaulib.c
+step.1 Do ReadELF -wi > log.txt file 
+
 """
 pre_process_files()
 

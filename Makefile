@@ -1,3 +1,4 @@
+
 VERSION = 0
 PATCHLEVEL = 0
 SUBLEVEL = 1
@@ -683,18 +684,25 @@ $(BIN_NAME): $(nautilus)
 
      
 nautilus: $(BIN_NAME)
+
+
+#New function to run the python file that generates the Lua test code,
+#A separate flag(LUA_BUILD_FLAG) is set to indicate that the generated code 
+#needs to be added to nautilus while building for the second time.
+
 define lua__
 	@python parse_gdb.py
-
+        	
+	LUA_BUILD_FLAG=1 make
 endef
 
 
+#if NAUT_CONFIG_LUA_TEST is defined then call the function lua__ to generate
+#additional code add it code base. 
+
 isoimage: nautilus
 ifdef NAUT_CONFIG_LUA_TEST
-	@echo "before try"
 	$(call lua__)
-	@make
-	@python post_process.py
 endif
 	cp $(BIN_NAME) iso/boot
 	$(GRUBMKRESCUE) -o $(ISO_NAME) iso
