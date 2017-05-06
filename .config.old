@@ -1,7 +1,7 @@
 #
 # Automatically generated make config: don't edit
 #Nautilus: 
-# Fri May  5 22:41:04 2017
+# Fri May  5 22:44:32 2017
 #
 
 #
@@ -98,5 +98,5 @@ NAUT_CONFIG_SERIAL_PORT=1
 #
 # Lua interpreter support 
 #
-# NAUT_CONFIG_LOAD_LUA is not set
+NAUT_CONFIG_LOAD_LUA=y
 # NAUT_CONFIG_LUA_TEST is not set
