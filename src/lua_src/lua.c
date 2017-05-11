@@ -571,3 +571,33 @@ int lua_main (int argc, char **argv) {
   return (result && status == LUA_OK) ? EXIT_SUCCESS : EXIT_FAILURE;
 }
 
+void handle_lua_cmd()
+{
+
+	  char **buff = malloc(sizeof *buff);
+	  
+	  char *tmp;
+	  
+	  tmp = strtok(buf, " ");
+	  int count=0;
+	  
+	  while(tmp !=NULL)
+	  {
+	        if(count==0)
+		{
+			char *farg = strcat("./",tmp);
+		  	strcpy(buff[count],farg);
+		}
+		else
+			strcpy(buff[count],tmp);
+		
+		tmp = strtok(NULL," "); 
+		count++;
+		 
+	  
+	  }
+	  int st = lua_main(count,buff);
+	  return 0;
+
+}
+

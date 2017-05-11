@@ -52,32 +52,7 @@ static int handle_cmd(char *buf, int n)
   if(strncasecmp(buf,"lua",3)==0)
   {
   #ifdef NAUT_CONFIG_LOAD_LUA
-	  
-	  char **buff = malloc(sizeof *buff);
-	  
-	  char *tmp;
-	  
-	  tmp = strtok(buf, " ");
-	  int count=0;
-	  
-	  while(tmp !=NULL)
-	  {
-	        if(count==0)
-		{
-			char *farg = strcat("./",tmp);
-		  	strcpy(buff[count],farg);
-		}
-		else
-			strcpy(buff[count],tmp);
-		
-		tmp = strtok(NULL," "); 
-		count++;
-		 
-	  
-	  }
-	  int st = lua_main(count,buff);
-	  return 0;
-
+      handle_lua_cmd();	  
   #else
       nk_vc_printf("\n Please enable Lua using make menuconfig");
       return 1;
