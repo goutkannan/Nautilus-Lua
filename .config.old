@@ -1,7 +1,11 @@
 #
 # Automatically generated make config: don't edit
 #Nautilus: 
+<<<<<<< HEAD
 # Wed May 10 13:30:05 2017
+=======
+# Fri May  5 22:44:32 2017
+>>>>>>> 33ed998f95f47642eeebe957323ca53a1155fb2b
 #
 
 #
@@ -99,4 +103,8 @@ NAUT_CONFIG_SERIAL_PORT=1
 # Lua interpreter support 
 #
 NAUT_CONFIG_LOAD_LUA=y
+<<<<<<< HEAD
 NAUT_CONFIG_LUA_TEST=y
+=======
+# NAUT_CONFIG_LUA_TEST is not set
+>>>>>>> 33ed998f95f47642eeebe957323ca53a1155fb2b
