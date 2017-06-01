@@ -1,7 +1,7 @@
 /*
  * Automatically generated C config: don't edit
  * Nautilus version: 
- * Wed May 31 20:04:29 2017
+ * Wed May 31 20:28:33 2017
  */
 #define AUTOCONF_INCLUDED
 
@@ -62,7 +62,7 @@
 /*
  * Debugging
  */
-#undef NAUT_CONFIG_DEBUG_INFO
+#define NAUT_CONFIG_DEBUG_INFO 1
 #undef NAUT_CONFIG_DEBUG_PRINTS
 #undef NAUT_CONFIG_ENABLE_ASSERTS
 #undef NAUT_CONFIG_PROFILE

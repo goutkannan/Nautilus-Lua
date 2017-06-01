@@ -1,0 +1,491 @@
+nk_sched_need_resched: {'ret_type': 'struct nk_thread *', 'typedef': {}, 'param': []}
+nk_block_dev_register: {'ret_type': 'struct nk_block_dev *', 'typedef': {'flags': ['uint64_t', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int']}, 'param': [['name', 'char *'], ['flags', 'long unsigned int'], ['inter', 'struct nk_block_dev_int *'], ['state', 'void *']]}
+wcsftime: {'ret_type': 'int', 'typedef': {}, 'param': []}
+nk_char_dev_unregister: {'ret_type': 'int', 'typedef': {}, 'param': [['d', 'struct nk_char_dev *']]}
+__strftime_l: {'ret_type': 'int', 'typedef': {}, 'param': []}
+fclose: {'ret_type': 'int', 'typedef': {}, 'param': [['f', 'void *']]}
+pthread_mutex_lock: {'ret_type': 'int', 'typedef': {}, 'param': []}
+nk_condvar_test: {'ret_type': 'void', 'typedef': {}, 'param': []}
+simple_strtoul: {'ret_type': 'long unsigned int', 'typedef': {}, 'param': [['cp', 'const char *'], ['endp', 'char * *'], ['base', 'unsigned int']]}
+nk_thread_queue_sleep: {'ret_type': 'int', 'typedef': {}, 'param': [['q', 'struct nk_queue *']]}
+nk_dequeue_entry_atomic: {'ret_type': 'struct nk_queue_entry *', 'typedef': {}, 'param': [['q', 'struct nk_queue *'], ['entry', 'struct nk_queue_entry *']]}
+nk_dequeue_first_atomic: {'ret_type': 'struct nk_queue_entry *', 'typedef': {}, 'param': [['q', 'struct nk_queue *']]}
+mm_boot_free_vmem: {'ret_type': 'void', 'typedef': {'start': ['addr_t', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int'], 'size': ['ulong_t', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int']}, 'param': [['start', 'long unsigned int'], ['size', 'long unsigned int']]}
+nk_condvar_destroy: {'ret_type': 'int', 'typedef': {}, 'param': [['c', 'struct nk_condvar *']]}
+mktime: {'ret_type': 'long int', 'typedef': {}, 'param': [['timeptr', 'struct tm *']]}
+init: {'ret_type': 'void', 'typedef': {}, 'param': [['mbd', 'long unsigned int'], ['magic', 'long unsigned int']]}
+nk_htable_count: {'ret_type': 'unsigned int', 'typedef': {}, 'param': [['htable', 'struct nk_hashtable *']]}
+disable_all_events: {'ret_type': 'void', 'typedef': {}, 'param': []}
+mm_boot_reserve_mem: {'ret_type': 'void', 'typedef': {'start': ['addr_t', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int'], 'size': ['ulong_t', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int']}, 'param': [['start', 'long unsigned int'], ['size', 'long unsigned int']]}
+strict_strtoul: {'ret_type': 'int', 'typedef': {}, 'param': [['cp', 'const char *'], ['base', 'unsigned int'], ['res', 'long unsigned int *']]}
+localtime: {'ret_type': 'struct tm *', 'typedef': {}, 'param': [['timer', 'const long int *']]}
+nk_switch_to_prev_vc: {'ret_type': 'int', 'typedef': {}, 'param': []}
+nk_find_thread_by_tid: {'ret_type': 'struct nk_thread *', 'typedef': {'tid': ['uint64_t', 'long unsigned int', 'long unsigned int']}, 'param': [['tid', 'long unsigned int']]}
+nk_net_dev_deinit: {'ret_type': 'int', 'typedef': {}, 'param': []}
+nk_cancel_timer: {'ret_type': 'int', 'typedef': {}, 'param': [['t', 'struct nk_timer *']]}
+nk_net_dev_init: {'ret_type': 'int', 'typedef': {}, 'param': []}
+vga_init_screen: {'ret_type': 'void', 'typedef': {}, 'param': []}
+test_nemo: {'ret_type': 'void', 'typedef': {}, 'param': []}
+nk_block_dev_find: {'ret_type': 'struct nk_block_dev *', 'typedef': {}, 'param': [['name', 'char *']]}
+nk_sched_init: {'ret_type': 'int', 'typedef': {}, 'param': [['cfg', 'struct nk_sched_config *']]}
+nk_stack_dump: {'ret_type': 'void', 'typedef': {'n': ['ulong_t', 'long unsigned int']}, 'param': [['n', 'long unsigned int']]}
+nk_vc_scrollup_specific: {'ret_type': 'int', 'typedef': {}, 'param': [['vc', 'struct nk_virtual_console *']]}
+strnlen: {'ret_type': 'long unsigned int', 'typedef': {'max': ['size_t', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int']}, 'param': [['str', 'const char *'], ['max', 'long unsigned int']]}
+buddy_init: {'ret_type': 'struct buddy_mempool *', 'typedef': {'min_order': ['ulong_t', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int'], 'pool_order': ['ulong_t', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int'], 'base_addr': ['ulong_t', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int']}, 'param': [['base_addr', 'long unsigned int'], ['pool_order', 'long unsigned int'], ['min_order', 'long unsigned int']]}
+nk_rb_erase: {'ret_type': 'void', 'typedef': {}, 'param': [['node', 'struct rb_node *'], ['root', 'struct rb_root *']]}
+nk_fs_stat: {'ret_type': 'int', 'typedef': {}, 'param': [['path', 'char *'], ['st', 'struct nk_fs_stat *']]}
+nk_fs_init: {'ret_type': 'int', 'typedef': {}, 'param': []}
+nk_dequeue_scancode: {'ret_type': 'short unsigned int', 'typedef': {}, 'param': [['vc', 'struct nk_virtual_console *']]}
+nk_yield: {'ret_type': 'void', 'typedef': {}, 'param': []}
+multiboot_get_size: {'ret_type': 'unsigned int', 'typedef': {'mbd': ['ulong_t', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int']}, 'param': [['mbd', 'long unsigned int']]}
+__wctype_l: {'ret_type': 'int', 'typedef': {}, 'param': []}
+perf_report: {'ret_type': 'void', 'typedef': {}, 'param': []}
+acpi_os_unmap_memory: {'ret_type': 'void', 'typedef': {'size': ['acpi_size', 'long unsigned int', 'long unsigned int', 'long unsigned int']}, 'param': [['virt', 'void *'], ['size', 'long unsigned int']]}
+mb_is_hrt_environ: {'ret_type': 'int', 'typedef': {'mbd': ['ulong_t', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int']}, 'param': [['mbd', 'long unsigned int']]}
+snprintf: {'ret_type': 'int', 'typedef': {}, 'param': [['buf', 'char *'], ['size', 'long unsigned int'], ['fmt', 'const char *'], ['...', '...']]}
+mm_dump_page_map: {'ret_type': 'void', 'typedef': {}, 'param': []}
+str_tolower: {'ret_type': 'void', 'typedef': {}, 'param': [['s', 'char *']]}
+cosh: {'ret_type': 'double', 'typedef': {}, 'param': [['x', 'double']]}
+__ctype_get_mb_cur_max: {'ret_type': 'long unsigned int', 'typedef': {}, 'param': []}
+wcrtomb: {'ret_type': 'int', 'typedef': {}, 'param': []}
+i8254_init: {'ret_type': 'int', 'typedef': {}, 'param': [['naut', 'struct naut_info *']]}
+asin: {'ret_type': 'double', 'typedef': {}, 'param': [['x', 'double']]}
+nk_deinit_fs: {'ret_type': 'int', 'typedef': {}, 'param': []}
+clock: {'ret_type': 'long int', 'typedef': {}, 'param': []}
+__mm_boot_alloc: {'ret_type': 'void *', 'typedef': {'align': ['ulong_t', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int'], 'goal': ['ulong_t', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int'], 'size': ['ulong_t', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int']}, 'param': [['size', 'long unsigned int'], ['align', 'long unsigned int'], ['goal', 'long unsigned int']]}
+imcr_begin_sym_io: {'ret_type': 'void', 'typedef': {}, 'param': []}
+msr_read: {'ret_type': 'long unsigned int', 'typedef': {'msr': ['uint32_t', 'unsigned int', 'unsigned int']}, 'param': [['msr', 'unsigned int']]}
+apic_init: {'ret_type': 'void', 'typedef': {}, 'param': [['core', 'struct cpu *']]}
+nk_htable_iter_remove: {'ret_type': 'int', 'typedef': {}, 'param': [['iter', 'struct nk_hashtable_iter *'], ['free_key', 'int']]}
+__freelocale: {'ret_type': 'int', 'typedef': {}, 'param': []}
+buddy_free: {'ret_type': 'void', 'typedef': {'order': ['ulong_t', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int']}, 'param': [['mp', 'struct buddy_mempool *'], ['addr', 'void *'], ['order', 'long unsigned int']]}
+nk_htable_dec: {'ret_type': 'int', 'typedef': {'value': ['addr_t', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int'], 'key': ['addr_t', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int']}, 'param': [['htable', 'struct nk_hashtable *'], ['key', 'long unsigned int'], ['value', 'long unsigned int']]}
+nk_fs_dump_files: {'ret_type': 'void', 'typedef': {}, 'param': []}
+nk_sched_thread_post_create: {'ret_type': 'int', 'typedef': {}, 'param': [['t', 'struct nk_thread *']]}
+nk_vc_puts: {'ret_type': 'int', 'typedef': {}, 'param': [['s', 'char *']]}
+null_irq_handler: {'ret_type': 'int', 'typedef': {'vector': ['excp_vec_t', 'long unsigned int', 'long unsigned int']}, 'param': [['excp', 'struct excp_entry_state *'], ['vector', 'long unsigned int']]}
+nk_rb_insert_color: {'ret_type': 'void', 'typedef': {}, 'param': [['node', 'struct rb_node *'], ['root', 'struct rb_root *']]}
+nk_bind_vc: {'ret_type': 'int', 'typedef': {}, 'param': [['thread', 'struct nk_thread *'], ['cons', 'struct nk_virtual_console *']]}
+strtok: {'ret_type': 'char *', 'typedef': {}, 'param': [['s', 'char *'], ['delim', 'const char *']]}
+wcsxfrm: {'ret_type': 'int', 'typedef': {}, 'param': []}
+nk_delay: {'ret_type': 'int', 'typedef': {'ns': ['uint64_t', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int']}, 'param': [['ns', 'long unsigned int']]}
+serial_mem_dump: {'ret_type': 'void', 'typedef': {}, 'param': [['start', 'unsigned char *'], ['n', 'int']]}
+strtof: {'ret_type': 'int', 'typedef': {}, 'param': []}
+nk_net_dev_find: {'ret_type': 'struct nk_net_dev *', 'typedef': {}, 'param': [['name', 'char *']]}
+nk_sched_dump_cores: {'ret_type': 'void', 'typedef': {}, 'param': [['cpu_arg', 'int']]}
+mf_handler: {'ret_type': 'int', 'typedef': {'vec': ['excp_vec_t', 'long unsigned int', 'long unsigned int']}, 'param': [['excp', 'struct excp_entry_state *'], ['vec', 'long unsigned int']]}
+realloc: {'ret_type': 'void *', 'typedef': {}, 'param': [['ptr', 'void *'], ['size', 'long unsigned int']]}
+nk_thread_run: {'ret_type': 'int', 'typedef': {'t': ['nk_thread_id_t', 'void *', 'void *', 'void *', 'void *', 'void *']}, 'param': [['t', 'void *']]}
+__strcoll_l: {'ret_type': 'int', 'typedef': {}, 'param': []}
+printf: {'ret_type': 'int', 'typedef': {}, 'param': [['s', 'const char *'], ['...', '...']]}
+scnprintf: {'ret_type': 'int', 'typedef': {}, 'param': [['buf', 'char *'], ['size', 'long unsigned int'], ['fmt', 'const char *'], ['...', '...']]}
+printk: {'ret_type': 'int', 'typedef': {}, 'param': [['fmt', 'const char *'], ['...', '...']]}
+pthread_mutex_init: {'ret_type': 'int', 'typedef': {}, 'param': []}
+__thread_fork: {'ret_type': 'void *', 'typedef': {}, 'param': []}
+nk_sched_get_runtime: {'ret_type': 'long unsigned int', 'typedef': {}, 'param': [['t', 'struct nk_thread *']]}
+nk_tls_test: {'ret_type': 'void', 'typedef': {}, 'param': []}
+arch_detect_mem_map: {'ret_type': 'void', 'typedef': {}, 'param': [['mm_info', 'struct mmap_info *'], ['memory_map', 'struct mem_map_entry *'], ['mbd', 'long unsigned int']]}
+nk_htable_change: {'ret_type': 'int', 'typedef': {'value': ['addr_t', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int'], 'key': ['addr_t', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int']}, 'param': [['htable', 'struct nk_hashtable *'], ['key', 'long unsigned int'], ['value', 'long unsigned int'], ['free_value', 'int']]}
+strdup: {'ret_type': 'char *', 'typedef': {}, 'param': [['s', 'const char *']]}
+buddy_alloc: {'ret_type': 'void *', 'typedef': {'order': ['ulong_t', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int']}, 'param': [['mp', 'struct buddy_mempool *'], ['order', 'long unsigned int']]}
+nk_fs_open: {'ret_type': 'struct nk_fs_open_file_state *', 'typedef': {}, 'param': [['path', 'char *'], ['flags', 'int'], ['mode', 'int']]}
+ftello64: {'ret_type': 'long unsigned int', 'typedef': {}, 'param': [['stream', 'void *']]}
+nk_join: {'ret_type': 'int', 'typedef': {'t': ['nk_thread_id_t', 'void *', 'void *', 'void *', 'void *', 'void *']}, 'param': [['t', 'void *'], ['retval', 'void * *']]}
+mm_boot_num_regions: {'ret_type': 'unsigned int', 'typedef': {}, 'param': []}
+serial_printlevel: {'ret_type': 'void', 'typedef': {}, 'param': [['level', 'int'], ['format', 'const char *'], ['...', '...']]}
+nk_rb_prev: {'ret_type': 'struct rb_node *', 'typedef': {}, 'param': [['node', 'struct rb_node *']]}
+__wcscoll_l: {'ret_type': 'int', 'typedef': {}, 'param': []}
+__errno_location: {'ret_type': 'int', 'typedef': {}, 'param': []}
+strerror: {'ret_type': 'char *', 'typedef': {}, 'param': [['errnum', 'int']]}
+nk_vc_getchar_extended: {'ret_type': 'int', 'typedef': {}, 'param': [['wait', 'int']]}
+nk_enqueue_keycode: {'ret_type': 'int', 'typedef': {'key': ['nk_keycode_t', 'short unsigned int']}, 'param': [['vc', 'struct nk_virtual_console *'], ['key', 'short unsigned int']]}
+__get_cpu_features: {'ret_type': 'int', 'typedef': {}, 'param': []}
+mm_boot_free: {'ret_type': 'void', 'typedef': {'size': ['ulong_t', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int']}, 'param': [['addr', 'void *'], ['size', 'long unsigned int']]}
+nk_htable_get_iter_key: {'ret_type': 'long unsigned int', 'typedef': {}, 'param': [['iter', 'struct nk_hashtable_iter *']]}
+strtold: {'ret_type': 'int', 'typedef': {}, 'param': []}
+abort: {'ret_type': 'void', 'typedef': {}, 'param': []}
+fprintf: {'ret_type': 'int', 'typedef': {}, 'param': [['f', 'void *'], ['s', 'const char *'], ['...', '...']]}
+fprintk: {'ret_type': 'int', 'typedef': {'fd': ['nk_fs_fd_t', 'struct nk_fs_open_file_state *', 'struct nk_fs_open_file_state *']}, 'param': [['fd', 'struct nk_fs_open_file_state *'], ['fmt', 'const char *'], ['...', '...']]}
+towupper: {'ret_type': 'int', 'typedef': {}, 'param': []}
+feof: {'ret_type': 'int', 'typedef': {}, 'param': [['x', 'void *']]}
+tan: {'ret_type': 'double', 'typedef': {}, 'param': [['x', 'double']]}
+nk_get_parent_tid: {'ret_type': 'void *', 'typedef': {}, 'param': []}
+nk_cpu_topo_discover: {'ret_type': 'int', 'typedef': {}, 'param': [['me', 'struct cpu *']]}
+clearerr: {'ret_type': 'void', 'typedef': {}, 'param': [['stream', 'void *']]}
+nk_dequeue_keycode: {'ret_type': 'short unsigned int', 'typedef': {}, 'param': [['vc', 'struct nk_virtual_console *']]}
+apic_realtime_to_cycles: {'ret_type': 'long unsigned int', 'typedef': {'ns': ['uint64_t', 'long unsigned int', 'long unsigned int', 'long unsigned int']}, 'param': [['apic', 'struct apic_dev *'], ['ns', 'long unsigned int']]}
+lrand48: {'ret_type': 'long int', 'typedef': {}, 'param': []}
+write: {'ret_type': 'int', 'typedef': {}, 'param': []}
+smp_bringup_aps: {'ret_type': 'int', 'typedef': {}, 'param': [['naut', 'struct naut_info *']]}
+kbd_init: {'ret_type': 'int', 'typedef': {}, 'param': [['naut', 'struct naut_info *']]}
+wmemchr: {'ret_type': 'int', 'typedef': {}, 'param': []}
+nk_barrier_wait: {'ret_type': 'int', 'typedef': {}, 'param': [['barrier', 'struct nk_barrier *']]}
+sin: {'ret_type': 'double', 'typedef': {}, 'param': [['x', 'double']]}
+serial_putlnn: {'ret_type': 'void', 'typedef': {}, 'param': [['line', 'const char *'], ['len', 'int']]}
+nk_destroy_htable_iter: {'ret_type': 'void', 'typedef': {}, 'param': [['iter', 'struct nk_hashtable_iter *']]}
+nk_vc_wait: {'ret_type': 'void', 'typedef': {}, 'param': []}
+atan: {'ret_type': 'double', 'typedef': {}, 'param': [['__x', 'double']]}
+simple_strtoull: {'ret_type': 'long long unsigned int', 'typedef': {}, 'param': [['cp', 'const char *'], ['endp', 'char * *'], ['base', 'unsigned int']]}
+nk_fs_write: {'ret_type': 'long int', 'typedef': {'fd': ['nk_fs_fd_t', 'struct nk_fs_open_file_state *', 'struct nk_fs_open_file_state *', 'struct nk_fs_open_file_state *', 'struct nk_fs_open_file_state *', 'struct nk_fs_open_file_state *', 'struct nk_fs_open_file_state *', 'struct nk_fs_open_file_state *']}, 'param': [['fd', 'struct nk_fs_open_file_state *'], ['buf', 'void *'], ['num_bytes', 'long unsigned int']]}
+ioctl: {'ret_type': 'int', 'typedef': {}, 'param': [['d', 'int'], ['request', 'long unsigned int'], ['...', '...']]}
+pmc_init: {'ret_type': 'int', 'typedef': {}, 'param': []}
+nemo_event_broadcast: {'ret_type': 'void', 'typedef': {'eid': ['nemo_event_id_t', 'int', 'int']}, 'param': [['eid', 'int']]}
+strcasecmp: {'ret_type': 'int', 'typedef': {}, 'param': [['s1', 'const char *'], ['s2', 'const char *']]}
+nk_vc_printf_specific: {'ret_type': 'int', 'typedef': {}, 'param': [['vc', 'struct nk_virtual_console *'], ['fmt', 'char *'], ['...', '...']]}
+nk_rwlock_rd_unlock: {'ret_type': 'int', 'typedef': {}, 'param': [['l', 'struct nk_rwlock *']]}
+__duplocale: {'ret_type': 'void *', 'typedef': {'locobj': ['locale_t', 'void *', 'void *', 'void *']}, 'param': [['locobj', 'void *']]}
+nk_sched_thread_state_init: {'ret_type': 'struct nk_sched_thread_state *', 'typedef': {}, 'param': [['thread', 'struct nk_thread *'], ['constraints', 'struct nk_sched_constraints *']]}
+apic_cycles_to_ticks: {'ret_type': 'unsigned int', 'typedef': {'cycles': ['uint64_t', 'long unsigned int', 'long unsigned int', 'long unsigned int']}, 'param': [['apic', 'struct apic_dev *'], ['cycles', 'long unsigned int']]}
+mm_get_all_mem: {'ret_type': 'long unsigned int', 'typedef': {}, 'param': []}
+nk_htable_insert: {'ret_type': 'int', 'typedef': {'value': ['addr_t', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int'], 'key': ['addr_t', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int']}, 'param': [['htable', 'struct nk_hashtable *'], ['key', 'long unsigned int'], ['value', 'long unsigned int']]}
+nk_core_barrier_arrive: {'ret_type': 'int', 'typedef': {}, 'param': []}
+nk_net_dev_unregister: {'ret_type': 'int', 'typedef': {}, 'param': [['d', 'struct nk_net_dev *']]}
+wctob: {'ret_type': 'int', 'typedef': {}, 'param': []}
+atan2: {'ret_type': 'double', 'typedef': {}, 'param': [['y', 'double'], ['x', 'double']]}
+nk_sched_reap: {'ret_type': 'void', 'typedef': {}, 'param': []}
+nk_block_dev_get_characteristics: {'ret_type': 'int', 'typedef': {}, 'param': [['dev', 'struct nk_block_dev *'], ['c', 'struct nk_block_dev_characteristics *']]}
+nk_fs_seek: {'ret_type': 'long unsigned int', 'typedef': {'fd': ['nk_fs_fd_t', 'struct nk_fs_open_file_state *', 'struct nk_fs_open_file_state *', 'struct nk_fs_open_file_state *', 'struct nk_fs_open_file_state *', 'struct nk_fs_open_file_state *', 'struct nk_fs_open_file_state *', 'struct nk_fs_open_file_state *'], 'offset': ['off_t', 'long unsigned int', 'long unsigned int', 'long unsigned int']}, 'param': [['fd', 'struct nk_fs_open_file_state *'], ['offset', 'long unsigned int'], ['whence', 'int']]}
+wmemmove: {'ret_type': 'int', 'typedef': {}, 'param': []}
+ipi_run_exps: {'ret_type': 'int', 'typedef': {}, 'param': [['data', 'struct ipi_exp_data *']]}
+mb_get_first_hrt_addr: {'ret_type': 'void *', 'typedef': {'mbd': ['ulong_t', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int']}, 'param': [['mbd', 'long unsigned int']]}
+btowc: {'ret_type': 'int', 'typedef': {}, 'param': []}
+nk_destroy_vc: {'ret_type': 'int', 'typedef': {}, 'param': [['vc', 'struct nk_virtual_console *']]}
+wcsnrtombs: {'ret_type': 'int', 'typedef': {}, 'param': []}
+nk_sched_make_runnable: {'ret_type': 'int', 'typedef': {}, 'param': [['thread', 'struct nk_thread *'], ['cpu', 'int'], ['admit', 'int']]}
+main: {'ret_type': 'void', 'typedef': {}, 'param': [['mbd', 'long unsigned int'], ['magic', 'long unsigned int']]}
+nk_timer_handler: {'ret_type': 'long unsigned int', 'typedef': {}, 'param': []}
+nk_my_numa_node: {'ret_type': 'unsigned int', 'typedef': {}, 'param': []}
+mm_boot_kmem_init: {'ret_type': 'void', 'typedef': {}, 'param': []}
+__uselocale: {'ret_type': 'int', 'typedef': {}, 'param': []}
+nk_vc_deinit: {'ret_type': 'int', 'typedef': {}, 'param': []}
+multiboot_parse: {'ret_type': 'struct multiboot_info *', 'typedef': {'mbd': ['ulong_t', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int'], 'magic': ['ulong_t', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int']}, 'param': [['mbd', 'long unsigned int'], ['magic', 'long unsigned int']]}
+__wcsftime_l: {'ret_type': 'int', 'typedef': {}, 'param': []}
+strcoll: {'ret_type': 'int', 'typedef': {}, 'param': [['str1', 'const char *'], ['str2', 'const char *']]}
+nk_fs_truncate: {'ret_type': 'int', 'typedef': {'len': ['off_t', 'long unsigned int', 'long unsigned int', 'long unsigned int']}, 'param': [['path', 'char *'], ['len', 'long unsigned int']]}
+__popcountdi2: {'ret_type': 'int', 'typedef': {}, 'param': [['a', 'long long int']]}
+nk_vc_gets: {'ret_type': 'int', 'typedef': {}, 'param': [['buf', 'char *'], ['n', 'int'], ['display', 'int']]}
+fmod: {'ret_type': 'double', 'typedef': {}, 'param': [['y', 'double'], ['x', 'double']]}
+nk_get_num_domains: {'ret_type': 'unsigned int', 'typedef': {}, 'param': []}
+clock_gettime: {'ret_type': 'int', 'typedef': {'clk_id': ['clockid_t', 'int']}, 'param': [['clk_id', 'int'], ['tp', 'struct timespec *']]}
+nk_print_regs: {'ret_type': 'void', 'typedef': {}, 'param': [['r', 'struct nk_regs *']]}
+nk_condvar_init: {'ret_type': 'int', 'typedef': {}, 'param': [['c', 'struct nk_condvar *']]}
+pci_init: {'ret_type': 'int', 'typedef': {}, 'param': [['naut', 'struct naut_info *']]}
+remove: {'ret_type': 'int', 'typedef': {}, 'param': [['path', 'const char *']]}
+nk_thread_queue_wake_one: {'ret_type': 'int', 'typedef': {}, 'param': [['q', 'struct nk_queue *']]}
+strncpy: {'ret_type': 'char *', 'typedef': {'limit': ['size_t', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int']}, 'param': [['dest', 'char *'], ['src', 'const char *'], ['limit', 'long unsigned int']]}
+multiboot_get_sys_ram: {'ret_type': 'long unsigned int', 'typedef': {'mbd': ['ulong_t', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int']}, 'param': [['mbd', 'long unsigned int']]}
+nk_acpi_init: {'ret_type': 'void', 'typedef': {}, 'param': []}
+reboot: {'ret_type': 'void', 'typedef': {}, 'param': []}
+nk_release_vc: {'ret_type': 'int', 'typedef': {}, 'param': [['thread', 'struct nk_thread *']]}
+sprintf: {'ret_type': 'int', 'typedef': {}, 'param': [['buf', 'char *'], ['fmt', 'const char *'], ['...', '...']]}
+__ctype_b_loc: {'ret_type': 'int', 'typedef': {}, 'param': []}
+strrchr: {'ret_type': 'char *', 'typedef': {}, 'param': [['s', 'const char *'], ['c', 'int']]}
+vga_init: {'ret_type': 'void', 'typedef': {}, 'param': []}
+acpi_tb_parse_root_table: {'ret_type': 'unsigned int', 'typedef': {'rsdp_address': ['acpi_physical_address', 'long unsigned int', 'long unsigned int']}, 'param': [['rsdp_address', 'long unsigned int']]}
+nk_dev_init: {'ret_type': 'int', 'typedef': {}, 'param': []}
+__do_backtrace: {'ret_type': 'void', 'typedef': {}, 'param': [['fp', 'void * *'], ['depth', 'unsigned int']]}
+strcspn: {'ret_type': 'long unsigned int', 'typedef': {}, 'param': [['s', 'const char *'], ['reject', 'const char *']]}
+ferror: {'ret_type': 'int', 'typedef': {}, 'param': [['f', 'void *']]}
+free: {'ret_type': 'void', 'typedef': {}, 'param': [['addr', 'void *']]}
+nk_condvar_bcast: {'ret_type': 'int', 'typedef': {}, 'param': [['c', 'struct nk_condvar *']]}
+__newlocale: {'ret_type': 'void *', 'typedef': {'base': ['locale_t', 'void *', 'void *', 'void *']}, 'param': [['category_mask', 'int'], ['locale', 'const char *'], ['base', 'void *']]}
+nk_timer_init: {'ret_type': 'int', 'typedef': {}, 'param': []}
+strncat: {'ret_type': 'char *', 'typedef': {'limit': ['size_t', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int']}, 'param': [['s1', 'char *'], ['s2', 'const char *'], ['limit', 'long unsigned int']]}
+nk_rb_replace_node: {'ret_type': 'void', 'typedef': {}, 'param': [['victim', 'struct rb_node *'], ['new', 'struct rb_node *'], ['root', 'struct rb_root *']]}
+nk_vc_printf: {'ret_type': 'int', 'typedef': {}, 'param': [['fmt', 'char *'], ['...', '...']]}
+acpi_os_map_memory: {'ret_type': 'void *', 'typedef': {'phys': ['acpi_physical_address', 'long unsigned int'], 'size': ['acpi_size', 'long unsigned int', 'long unsigned int', 'long unsigned int']}, 'param': [['phys', 'long unsigned int'], ['size', 'long unsigned int']]}
+apic_read_timer: {'ret_type': 'int', 'typedef': {}, 'param': [['apic', 'struct apic_dev *']]}
+msr_write: {'ret_type': 'void', 'typedef': {'data': ['uint64_t', 'long unsigned int'], 'msr': ['uint32_t', 'unsigned int', 'unsigned int']}, 'param': [['msr', 'unsigned int'], ['data', 'long unsigned int']]}
+rand: {'ret_type': 'int', 'typedef': {}, 'param': []}
+ischar: {'ret_type': 'int', 'typedef': {}, 'param': [['str', 'unsigned char *']]}
+ldexp: {'ret_type': 'double', 'typedef': {}, 'param': [['x', 'double'], ['exp', 'int']]}
+nk_vc_handle_input: {'ret_type': 'int', 'typedef': {'scan': ['nk_scancode_t', 'short unsigned int', 'short unsigned int']}, 'param': [['scan', 'short unsigned int']]}
+acpi_tb_verify_table: {'ret_type': 'unsigned int', 'typedef': {}, 'param': [['table_desc', 'struct acpi_table_desc *']]}
+nk_queue_create: {'ret_type': 'struct nk_queue *', 'typedef': {}, 'param': []}
+serial_init: {'ret_type': 'void', 'typedef': {}, 'param': []}
+apic_wait_for_send: {'ret_type': 'unsigned int', 'typedef': {}, 'param': [['apic', 'struct apic_dev *']]}
+apic_get_maxlvt: {'ret_type': 'int', 'typedef': {}, 'param': [['apic', 'struct apic_dev *']]}
+__wcsxfrm_l: {'ret_type': 'int', 'typedef': {}, 'param': []}
+kmem_add_memory: {'ret_type': 'void', 'typedef': {'base_addr': ['ulong_t', 'long unsigned int', 'long unsigned int']}, 'param': [['mem', 'struct mem_region *'], ['base_addr', 'long unsigned int'], ['size', 'long unsigned int']]}
+mm_boot_alloc: {'ret_type': 'void *', 'typedef': {'size': ['ulong_t', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int']}, 'param': [['size', 'long unsigned int']]}
+system: {'ret_type': 'int', 'typedef': {}, 'param': [['command', 'const char *']]}
+nk_net_dev_get_characteristics: {'ret_type': 'int', 'typedef': {}, 'param': [['dev', 'struct nk_net_dev *'], ['c', 'struct nk_net_dev_characteristics *']]}
+nk_char_dev_register: {'ret_type': 'struct nk_char_dev *', 'typedef': {'flags': ['uint64_t', 'long unsigned int', 'long unsigned int', 'long unsigned int']}, 'param': [['name', 'char *'], ['flags', 'long unsigned int'], ['inter', 'struct nk_char_dev_int *'], ['state', 'void *']]}
+strict_strtoull: {'ret_type': 'int', 'typedef': {}, 'param': [['cp', 'const char *'], ['base', 'unsigned int'], ['res', 'long long unsigned int *']]}
+apic_cycles_to_realtime: {'ret_type': 'long unsigned int', 'typedef': {'cycles': ['uint64_t', 'long unsigned int', 'long unsigned int', 'long unsigned int']}, 'param': [['apic', 'struct apic_dev *'], ['cycles', 'long unsigned int']]}
+nk_fs_register: {'ret_type': 'struct nk_fs *', 'typedef': {'flags': ['uint64_t', 'long unsigned int']}, 'param': [['name', 'char *'], ['flags', 'long unsigned int'], ['inter', 'struct nk_fs_int *'], ['state', 'void *']]}
+test_setlong: {'ret_type': 'int', 'typedef': {}, 'param': []}
+strcat: {'ret_type': 'char *', 'typedef': {}, 'param': [['s1', 'char *'], ['s2', 'const char *']]}
+nk_sleep: {'ret_type': 'int', 'typedef': {'ns': ['uint64_t', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int']}, 'param': [['ns', 'long unsigned int']]}
+nk_dequeue_entry: {'ret_type': 'struct nk_queue_entry *', 'typedef': {}, 'param': [['entry', 'struct nk_queue_entry *']]}
+nk_rwlock_rd_lock: {'ret_type': 'int', 'typedef': {}, 'param': [['l', 'struct nk_rwlock *']]}
+nk_hash_long: {'ret_type': 'long unsigned int', 'typedef': {'bits': ['uint_t', 'unsigned int', 'unsigned int', 'unsigned int'], 'val': ['ulong_t', 'long unsigned int']}, 'param': [['val', 'long unsigned int'], ['bits', 'unsigned int']]}
+buddy_dump_mempool: {'ret_type': 'void', 'typedef': {}, 'param': [['mp', 'struct buddy_mempool *']]}
+fpu_init: {'ret_type': 'void', 'typedef': {}, 'param': [['naut', 'struct naut_info *']]}
+fscanf: {'ret_type': 'int', 'typedef': {}, 'param': [['stream', 'void *'], ['format', 'const char *'], ['...', '...']]}
+nk_wait_timer: {'ret_type': 'int', 'typedef': {}, 'param': [['t', 'struct nk_timer *']]}
+wcscmp: {'ret_type': 'int', 'typedef': {}, 'param': []}
+nk_dev_find: {'ret_type': 'struct nk_dev *', 'typedef': {}, 'param': [['name', 'char *']]}
+idle: {'ret_type': 'void', 'typedef': {}, 'param': [['in', 'void *'], ['out', 'void * *']]}
+acpi_table_print_madt_entry: {'ret_type': 'void', 'typedef': {}, 'param': [['header', 'struct acpi_subtable_header *']]}
+nk_fs_read: {'ret_type': 'long int', 'typedef': {'fd': ['nk_fs_fd_t', 'struct nk_fs_open_file_state *', 'struct nk_fs_open_file_state *', 'struct nk_fs_open_file_state *', 'struct nk_fs_open_file_state *', 'struct nk_fs_open_file_state *', 'struct nk_fs_open_file_state *', 'struct nk_fs_open_file_state *']}, 'param': [['fd', 'struct nk_fs_open_file_state *'], ['buf', 'void *'], ['num_bytes', 'long unsigned int']]}
+nk_net_dev_register: {'ret_type': 'struct nk_net_dev *', 'typedef': {'flags': ['uint64_t', 'long unsigned int', 'long unsigned int', 'long unsigned int']}, 'param': [['name', 'char *'], ['flags', 'long unsigned int'], ['inter', 'struct nk_net_dev_int *'], ['state', 'void *']]}
+nk_char_dev_init: {'ret_type': 'int', 'typedef': {}, 'param': []}
+__assert_fail: {'ret_type': 'void', 'typedef': {}, 'param': [['assertion', 'const char *'], ['file', 'const char *'], ['line', 'unsigned int'], ['function', 'const char *']]}
+nk_core_barrier_wait: {'ret_type': 'int', 'typedef': {}, 'param': []}
+smp_ap_entry: {'ret_type': 'void', 'typedef': {}, 'param': [['core', 'struct cpu *']]}
+bindtextdomain: {'ret_type': 'char *', 'typedef': {}, 'param': [['domainname', 'const char *'], ['dirname', 'const char *']]}
+wmemcpy: {'ret_type': 'int', 'typedef': {}, 'param': []}
+strict_strtoll: {'ret_type': 'int', 'typedef': {}, 'param': [['cp', 'const char *'], ['base', 'unsigned int'], ['res', 'long long int *']]}
+nk_rand_init: {'ret_type': 'int', 'typedef': {}, 'param': [['cpu', 'struct cpu *']]}
+mm_boot_alloc_aligned: {'ret_type': 'void *', 'typedef': {'align': ['ulong_t', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int'], 'size': ['ulong_t', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int']}, 'param': [['size', 'long unsigned int'], ['align', 'long unsigned int']]}
+kmem_get_base_zone: {'ret_type': 'struct mem_region *', 'typedef': {}, 'param': []}
+fseek: {'ret_type': 'int', 'typedef': {}, 'param': [['stream', 'void *'], ['offset', 'long int'], ['whence', 'int']]}
+nk_thread_name: {'ret_type': 'int', 'typedef': {'tid': ['nk_thread_id_t', 'void *', 'void *', 'void *', 'void *', 'void *']}, 'param': [['tid', 'void *'], ['name', 'char *']]}
+nk_launch_shell: {'ret_type': 'void *', 'typedef': {}, 'param': [['name', 'char *'], ['cpu', 'int']]}
+nk_numa_init: {'ret_type': 'int', 'typedef': {}, 'param': []}
+nk_sched_dump_threads: {'ret_type': 'void', 'typedef': {}, 'param': [['cpu', 'int']]}
+nk_rwlock_wr_unlock: {'ret_type': 'int', 'typedef': {}, 'param': [['l', 'struct nk_rwlock *']]}
+nk_enqueue_scancode: {'ret_type': 'int', 'typedef': {'scan': ['nk_scancode_t', 'short unsigned int', 'short unsigned int']}, 'param': [['vc', 'struct nk_virtual_console *'], ['scan', 'short unsigned int']]}
+nk_htable_get_iter_value: {'ret_type': 'long unsigned int', 'typedef': {}, 'param': [['iter', 'struct nk_hashtable_iter *']]}
+nk_switch_to_next_vc: {'ret_type': 'int', 'typedef': {}, 'param': []}
+nk_htable_search: {'ret_type': 'long unsigned int', 'typedef': {'key': ['addr_t', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int']}, 'param': [['htable', 'struct nk_hashtable *'], ['key', 'long unsigned int']]}
+nk_get_cur_vc: {'ret_type': 'struct nk_virtual_console *', 'typedef': {}, 'param': []}
+nk_tls_key_delete: {'ret_type': 'int', 'typedef': {'key': ['nk_tls_key_t', 'unsigned int']}, 'param': [['key', 'unsigned int']]}
+srand48: {'ret_type': 'void', 'typedef': {}, 'param': [['seedval', 'long int']]}
+strtold_l: {'ret_type': 'int', 'typedef': {}, 'param': []}
+exp: {'ret_type': 'double', 'typedef': {}, 'param': [['x', 'double']]}
+fseeko64: {'ret_type': 'int', 'typedef': {'offset': ['uint64_t', 'long unsigned int', 'long unsigned int']}, 'param': [['fp', 'void *'], ['offset', 'long unsigned int'], ['whence', 'int']]}
+nk_htable_iter_advance: {'ret_type': 'int', 'typedef': {}, 'param': [['iter', 'struct nk_hashtable_iter *']]}
+acpi_get_table_with_size: {'ret_type': 'unsigned int', 'typedef': {'instance': ['uint32_t', 'unsigned int', 'unsigned int']}, 'param': [['signature', 'char *'], ['instance', 'unsigned int'], ['out_table', 'struct acpi_table_header * *'], ['tbl_size', 'long unsigned int *']]}
+nk_sched_get_realtime: {'ret_type': 'long unsigned int', 'typedef': {}, 'param': []}
+setvbuf: {'ret_type': 'int', 'typedef': {}, 'param': [['stream', 'void *'], ['buf', 'char *'], ['type', 'int'], ['size', 'long unsigned int']]}
+strncasecmp: {'ret_type': 'int', 'typedef': {'limit': ['size_t', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int']}, 'param': [['s1', 'const char *'], ['s2', 'const char *'], ['limit', 'long unsigned int']]}
+nk_sched_yield: {'ret_type': 'void', 'typedef': {}, 'param': []}
+nk_sched_cpu_mug: {'ret_type': 'int', 'typedef': {'maxcount': ['uint64_t', 'long unsigned int', 'long unsigned int']}, 'param': [['old_cpu', 'int'], ['maxcount', 'long unsigned int'], ['actualcount', 'long unsigned int *']]}
+simple_strtoll: {'ret_type': 'long long int', 'typedef': {}, 'param': [['cp', 'const char *'], ['endp', 'char * *'], ['base', 'unsigned int']]}
+nk_htable_remove: {'ret_type': 'long unsigned int', 'typedef': {'key': ['addr_t', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int']}, 'param': [['htable', 'struct nk_hashtable *'], ['key', 'long unsigned int'], ['free_key', 'int']]}
+lseek64: {'ret_type': 'long unsigned int', 'typedef': {'offset': ['uint64_t', 'long unsigned int', 'long unsigned int']}, 'param': [['fd', 'int'], ['offset', 'long unsigned int'], ['whence', 'int']]}
+strtol: {'ret_type': 'long int', 'typedef': {}, 'param': [['str', 'const char *'], ['endptr', 'char * *'], ['base', 'int']]}
+fputc: {'ret_type': 'int', 'typedef': {}, 'param': [['c', 'int'], ['f', 'void *']]}
+apic_bcast_iipi: {'ret_type': 'void', 'typedef': {}, 'param': [['apic', 'struct apic_dev *']]}
+strtoi: {'ret_type': 'int', 'typedef': {}, 'param': [['nptr', 'const char *'], ['endptr', 'char * *']]}
+apic_deinit_iipi: {'ret_type': 'void', 'typedef': {'remote_id': ['uint32_t', 'unsigned int', 'unsigned int', 'unsigned int', 'unsigned int', 'unsigned int']}, 'param': [['apic', 'struct apic_dev *'], ['remote_id', 'unsigned int']]}
+strtod: {'ret_type': 'double', 'typedef': {}, 'param': [['string', 'const char *'], ['endPtr', 'char * *']]}
+__towlower_l: {'ret_type': 'int', 'typedef': {}, 'param': []}
+writev: {'ret_type': 'int', 'typedef': {}, 'param': []}
+frexp: {'ret_type': 'double', 'typedef': {}, 'param': [['x', 'double'], ['e', 'int *']]}
+fputs: {'ret_type': 'int', 'typedef': {}, 'param': [['s', 'const char *'], ['stream', 'void *']]}
+strtox: {'ret_type': 'long unsigned int', 'typedef': {}, 'param': [['nptr', 'const char *'], ['endptr', 'char * *']]}
+acpi_tb_install_table: {'ret_type': 'void', 'typedef': {'table_index': ['uint32_t', 'unsigned int', 'unsigned int'], 'address': ['acpi_physical_address', 'long unsigned int', 'long unsigned int']}, 'param': [['address', 'long unsigned int'], ['signature', 'char *'], ['table_index', 'unsigned int']]}
+nk_set_thread_fork_output: {'ret_type': 'void', 'typedef': {}, 'param': [['result', 'void *']]}
+nk_rb_next: {'ret_type': 'struct rb_node *', 'typedef': {}, 'param': [['node', 'struct rb_node *']]}
+wmemset: {'ret_type': 'int', 'typedef': {}, 'param': []}
+iswctype: {'ret_type': 'int', 'typedef': {}, 'param': []}
+wcscoll: {'ret_type': 'int', 'typedef': {}, 'param': []}
+nk_char_dev_get_characteristics: {'ret_type': 'int', 'typedef': {}, 'param': [['dev', 'struct nk_char_dev *'], ['c', 'struct nk_char_dev_characteristics *']]}
+ceil: {'ret_type': 'double', 'typedef': {}, 'param': [['x', 'double']]}
+strsep: {'ret_type': 'char *', 'typedef': {}, 'param': [['s', 'char * *'], ['ct', 'const char *']]}
+fileno: {'ret_type': 'int', 'typedef': {}, 'param': []}
+nk_vc_print: {'ret_type': 'int', 'typedef': {}, 'param': [['s', 'char *']]}
+nk_fs_close: {'ret_type': 'int', 'typedef': {'fd': ['nk_fs_fd_t', 'struct nk_fs_open_file_state *', 'struct nk_fs_open_file_state *', 'struct nk_fs_open_file_state *', 'struct nk_fs_open_file_state *', 'struct nk_fs_open_file_state *', 'struct nk_fs_open_file_state *', 'struct nk_fs_open_file_state *']}, 'param': [['fd', 'struct nk_fs_open_file_state *']]}
+__stack_chk_fail: {'ret_type': 'int', 'typedef': {}, 'param': []}
+apic_send_iipi: {'ret_type': 'void', 'typedef': {'remote_id': ['uint32_t', 'unsigned int', 'unsigned int', 'unsigned int', 'unsigned int', 'unsigned int']}, 'param': [['apic', 'struct apic_dev *'], ['remote_id', 'unsigned int']]}
+apic_self_ipi: {'ret_type': 'void', 'typedef': {'vector': ['uint_t', 'unsigned int']}, 'param': [['apic', 'struct apic_dev *'], ['vector', 'unsigned int']]}
+strncmp: {'ret_type': 'int', 'typedef': {'limit': ['size_t', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int']}, 'param': [['s1', 'const char *'], ['s2', 'const char *'], ['limit', 'long unsigned int']]}
+apic_set_oneshot_timer: {'ret_type': 'void', 'typedef': {'ticks': ['uint32_t', 'unsigned int', 'unsigned int', 'unsigned int', 'unsigned int', 'unsigned int']}, 'param': [['apic', 'struct apic_dev *'], ['ticks', 'unsigned int']]}
+nk_thread_exit: {'ret_type': 'void', 'typedef': {}, 'param': [['retval', 'void *']]}
+xm_handler: {'ret_type': 'int', 'typedef': {'vec': ['excp_vec_t', 'long unsigned int', 'long unsigned int']}, 'param': [['excp', 'struct excp_entry_state *'], ['vec', 'long unsigned int']]}
+acpi_shutdown: {'ret_type': 'void', 'typedef': {}, 'param': []}
+nk_get_rand_bytes: {'ret_type': 'void', 'typedef': {}, 'param': [['buf', 'unsigned char *'], ['len', 'unsigned int']]}
+putwc: {'ret_type': 'int', 'typedef': {}, 'param': []}
+vga_get_cursor: {'ret_type': 'void', 'typedef': {}, 'param': [['x', 'unsigned char *'], ['y', 'unsigned char *']]}
+strchr: {'ret_type': 'char *', 'typedef': {}, 'param': [['s', 'const char *'], ['c', 'int']]}
+nk_fs_find: {'ret_type': 'struct nk_fs *', 'typedef': {}, 'param': [['name', 'char *']]}
+acpi_reboot: {'ret_type': 'void', 'typedef': {}, 'param': []}
+nk_dev_deinit: {'ret_type': 'int', 'typedef': {}, 'param': []}
+nk_mwait_init: {'ret_type': 'int', 'typedef': {}, 'param': []}
+i8254_calib_tsc: {'ret_type': 'long unsigned int', 'typedef': {}, 'param': []}
+nk_block_dev_init: {'ret_type': 'int', 'typedef': {}, 'param': []}
+__kernel_standard: {'ret_type': 'int', 'typedef': {}, 'param': []}
+apic_get_id: {'ret_type': 'unsigned int', 'typedef': {}, 'param': [['apic', 'struct apic_dev *']]}
+nk_fs_dump_filesystems: {'ret_type': 'void', 'typedef': {}, 'param': []}
+nk_core_barrier_lower: {'ret_type': 'int', 'typedef': {}, 'param': []}
+nk_timer_deinit: {'ret_type': 'void', 'typedef': {}, 'param': []}
+nk_char_dev_find: {'ret_type': 'struct nk_char_dev *', 'typedef': {}, 'param': [['name', 'char *']]}
+nk_barrier_init: {'ret_type': 'int', 'typedef': {'count': ['uint32_t', 'unsigned int']}, 'param': [['barrier', 'struct nk_barrier *'], ['count', 'unsigned int']]}
+cos: {'ret_type': 'double', 'typedef': {}, 'param': [['x', 'double']]}
+nk_sched_thread_change_constraints: {'ret_type': 'int', 'typedef': {}, 'param': [['constraints', 'struct nk_sched_constraints *']]}
+disable_8259pic: {'ret_type': 'void', 'typedef': {}, 'param': []}
+nk_get_tid: {'ret_type': 'void *', 'typedef': {}, 'param': []}
+nk_kmem_init: {'ret_type': 'int', 'typedef': {}, 'param': []}
+strftime: {'ret_type': 'long unsigned int', 'typedef': {}, 'param': [['str', 'char *'], ['maxsize', 'long unsigned int'], ['format', 'const char *'], ['timeptr', 'const struct tm *']]}
+nk_int_init: {'ret_type': 'int', 'typedef': {}, 'param': [['sys', 'struct sys_info *']]}
+sinh: {'ret_type': 'double', 'typedef': {}, 'param': [['x', 'double']]}
+pow: {'ret_type': 'double', 'typedef': {}, 'param': [['x', 'double'], ['y', 'double']]}
+nk_barrier_test: {'ret_type': 'void', 'typedef': {}, 'param': []}
+__strxfrm_l: {'ret_type': 'int', 'typedef': {}, 'param': []}
+poll: {'ret_type': 'int', 'typedef': {'nfds': ['nfds_t', 'long unsigned int']}, 'param': [['fds', 'struct pollfd *'], ['nfds', 'long unsigned int'], ['timeout', 'int']]}
+ungetwc: {'ret_type': 'int', 'typedef': {}, 'param': []}
+nk_paging_init: {'ret_type': 'void', 'typedef': {'mbd': ['ulong_t', 'long unsigned int']}, 'param': [['mem', 'struct nk_mem_info *'], ['mbd', 'long unsigned int']]}
+arch_early_init: {'ret_type': 'int', 'typedef': {}, 'param': [['naut', 'struct naut_info *']]}
+nk_rand_set_xi: {'ret_type': 'void', 'typedef': {'xi': ['uint64_t', 'long unsigned int', 'long unsigned int']}, 'param': [['xi', 'long unsigned int']]}
+mm_get_usable_ram: {'ret_type': 'long unsigned int', 'typedef': {}, 'param': []}
+nk_fs_ftruncate: {'ret_type': 'int', 'typedef': {'fd': ['nk_fs_fd_t', 'struct nk_fs_open_file_state *', 'struct nk_fs_open_file_state *', 'struct nk_fs_open_file_state *', 'struct nk_fs_open_file_state *', 'struct nk_fs_open_file_state *', 'struct nk_fs_open_file_state *', 'struct nk_fs_open_file_state *'], 'len': ['off_t', 'long unsigned int', 'long unsigned int', 'long unsigned int']}, 'param': [['fd', 'struct nk_fs_open_file_state *'], ['len', 'long unsigned int']]}
+syscall: {'ret_type': 'int', 'typedef': {}, 'param': [['number', 'int'], ['...', '...']]}
+putc: {'ret_type': 'int', 'typedef': {}, 'param': []}
+__nl_langinfo_l: {'ret_type': 'char *', 'typedef': {'locale': ['locale_t', 'void *', 'void *', 'void *'], 'item': ['nl_item', 'int']}, 'param': [['item', 'int'], ['locale', 'void *']]}
+mbrtowc: {'ret_type': 'int', 'typedef': {}, 'param': []}
+mm_boot_kmem_cleanup: {'ret_type': 'void', 'typedef': {}, 'param': []}
+nk_thread_destroy: {'ret_type': 'void', 'typedef': {'t': ['nk_thread_id_t', 'void *', 'void *', 'void *', 'void *', 'void *']}, 'param': [['t', 'void *']]}
+acpi_warning: {'ret_type': 'void', 'typedef': {'line_number': ['uint32_t', 'unsigned int', 'unsigned int', 'unsigned int']}, 'param': [['module_name', 'const char *'], ['line_number', 'unsigned int'], ['format', 'const char *'], ['...', '...']]}
+nk_sched_thread_move: {'ret_type': 'int', 'typedef': {}, 'param': [['t', 'struct nk_thread *'], ['new_cpu', 'int'], ['block', 'int']]}
+mbsrtowcs: {'ret_type': 'int', 'typedef': {}, 'param': []}
+nk_dev_dump_devices: {'ret_type': 'void', 'typedef': {}, 'param': []}
+fmodnew: {'ret_type': 'double', 'typedef': {}, 'param': [['y', 'int'], ['x', 'int']]}
+acpi_find_root_pointer: {'ret_type': 'unsigned int', 'typedef': {}, 'param': [['table_address', 'long unsigned int *']]}
+arch_reserve_boot_regions: {'ret_type': 'void', 'typedef': {}, 'param': [['mbd', 'long unsigned int']]}
+nk_core_barrier_raise: {'ret_type': 'int', 'typedef': {}, 'param': []}
+nk_char_dev_deinit: {'ret_type': 'int', 'typedef': {}, 'param': []}
+nk_htable_inc: {'ret_type': 'int', 'typedef': {'value': ['addr_t', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int'], 'key': ['addr_t', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int']}, 'param': [['htable', 'struct nk_hashtable *'], ['key', 'long unsigned int'], ['value', 'long unsigned int']]}
+drand48: {'ret_type': 'double', 'typedef': {}, 'param': []}
+nk_rwlock_wr_lock: {'ret_type': 'int', 'typedef': {}, 'param': [['l', 'struct nk_rwlock *']]}
+tanh: {'ret_type': 'double', 'typedef': {}, 'param': [['x', 'double']]}
+enable_all_events: {'ret_type': 'void', 'typedef': {}, 'param': []}
+rename: {'ret_type': 'int', 'typedef': {}, 'param': [['old', 'const char *'], ['new', 'const char *']]}
+malloc: {'ret_type': 'void *', 'typedef': {}, 'param': [['size', 'long unsigned int']]}
+nk_rwlock_test: {'ret_type': 'void', 'typedef': {}, 'param': []}
+srand: {'ret_type': 'void', 'typedef': {}, 'param': [['seed', 'unsigned int']]}
+nk_hash_buffer: {'ret_type': 'long unsigned int', 'typedef': {'length': ['uint_t', 'unsigned int', 'unsigned int', 'unsigned int']}, 'param': [['msg', 'unsigned char *'], ['length', 'unsigned int']]}
+enable_perf_event: {'ret_type': 'void', 'typedef': {}, 'param': [['event', 'struct pmc_event *']]}
+getwc: {'ret_type': 'int', 'typedef': {}, 'param': [['stream', 'void *']]}
+nk_get_base_region_by_cpu: {'ret_type': 'struct mem_region *', 'typedef': {'cpu': ['cpu_id_t', 'unsigned int']}, 'param': [['cpu', 'unsigned int']]}
+strict_strtol: {'ret_type': 'int', 'typedef': {}, 'param': [['cp', 'const char *'], ['base', 'unsigned int'], ['res', 'long int *']]}
+nk_sched_dump_time: {'ret_type': 'void', 'typedef': {}, 'param': [['cpu_arg', 'int']]}
+fabs: {'ret_type': 'double', 'typedef': {}, 'param': [['__x', 'double']]}
+nk_dev_unregister: {'ret_type': 'int', 'typedef': {}, 'param': [['d', 'struct nk_dev *']]}
+getc: {'ret_type': 'int', 'typedef': {}, 'param': [['arg', 'void *']]}
+sqrt: {'ret_type': 'double', 'typedef': {}, 'param': [['x', 'double']]}
+towlower: {'ret_type': 'int', 'typedef': {}, 'param': []}
+mm_boot_last_pfn: {'ret_type': 'long unsigned int', 'typedef': {}, 'param': []}
+nk_sched_sleep: {'ret_type': 'void', 'typedef': {}, 'param': []}
+read_lua_script: {'ret_type': 'char *', 'typedef': {}, 'param': []}
+detect_cpu: {'ret_type': 'void', 'typedef': {}, 'param': []}
+__strtok_r: {'ret_type': 'char *', 'typedef': {}, 'param': [['s', 'char *'], ['delim', 'const char *'], ['last', 'char * *']]}
+__ctype_tolower_loc: {'ret_type': 'int', 'typedef': {}, 'param': []}
+str_toupper: {'ret_type': 'void', 'typedef': {}, 'param': [['s', 'char *']]}
+nk_sched_exit: {'ret_type': 'void', 'typedef': {}, 'param': []}
+mm_boot_reserve_vmem: {'ret_type': 'void', 'typedef': {'start': ['addr_t', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int'], 'size': ['ulong_t', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int']}, 'param': [['start', 'long unsigned int'], ['size', 'long unsigned int']]}
+textdomain: {'ret_type': 'char *', 'typedef': {}, 'param': [['domainname', 'const char *']]}
+fopen64: {'ret_type': 'void *', 'typedef': {}, 'param': [['path', 'const char *'], ['f', 'void *']]}
+wmemcmp: {'ret_type': 'int', 'typedef': {}, 'param': []}
+nemo_unregister_event_action: {'ret_type': 'void', 'typedef': {'id': ['nemo_event_id_t', 'int', 'int']}, 'param': [['id', 'int']]}
+vga_puts: {'ret_type': 'void', 'typedef': {}, 'param': [['buf', 'char *']]}
+fflush: {'ret_type': 'int', 'typedef': {}, 'param': [['f', 'void *']]}
+__iswctype_l: {'ret_type': 'int', 'typedef': {}, 'param': []}
+tmpnam: {'ret_type': 'char *', 'typedef': {}, 'param': [['s', 'char *']]}
+nk_sched_thread_state_deinit: {'ret_type': 'void', 'typedef': {}, 'param': [['thread', 'struct nk_thread *']]}
+strxfrm: {'ret_type': 'int', 'typedef': {}, 'param': []}
+acpi_os_get_root_pointer: {'ret_type': 'long unsigned int', 'typedef': {}, 'param': []}
+__strtod_l: {'ret_type': 'int', 'typedef': {}, 'param': []}
+read: {'ret_type': 'int', 'typedef': {}, 'param': []}
+serial_puts: {'ret_type': 'void', 'typedef': {}, 'param': [['buf', 'const char *']]}
+nk_vc_init: {'ret_type': 'int', 'typedef': {}, 'param': []}
+nk_rand_seed: {'ret_type': 'void', 'typedef': {'seed': ['uint64_t', 'long unsigned int', 'long unsigned int']}, 'param': [['seed', 'long unsigned int']]}
+nemo_event_await: {'ret_type': 'void', 'typedef': {}, 'param': []}
+nk_vc_scrollup: {'ret_type': 'int', 'typedef': {}, 'param': []}
+nk_fs_tell: {'ret_type': 'long int', 'typedef': {'fd': ['nk_fs_fd_t', 'struct nk_fs_open_file_state *', 'struct nk_fs_open_file_state *', 'struct nk_fs_open_file_state *', 'struct nk_fs_open_file_state *', 'struct nk_fs_open_file_state *', 'struct nk_fs_open_file_state *', 'struct nk_fs_open_file_state *']}, 'param': [['fd', 'struct nk_fs_open_file_state *']]}
+strstr: {'ret_type': 'char *', 'typedef': {}, 'param': [['s1', 'const char *'], ['s2', 'const char *']]}
+__strtof_l: {'ret_type': 'int', 'typedef': {}, 'param': []}
+freopen: {'ret_type': 'void *', 'typedef': {}, 'param': [['fname', 'const char *'], ['mode', 'const char *'], ['stream', 'void *']]}
+mm_boot_get_region: {'ret_type': 'struct mem_map_entry *', 'typedef': {}, 'param': [['i', 'unsigned int']]}
+strcmp: {'ret_type': 'int', 'typedef': {}, 'param': [['s1', 'const char *'], ['s2', 'const char *']]}
+tmpfile: {'ret_type': 'void *', 'typedef': {}, 'param': []}
+nk_fs_fstat: {'ret_type': 'int', 'typedef': {'fd': ['nk_fs_fd_t', 'struct nk_fs_open_file_state *', 'struct nk_fs_open_file_state *', 'struct nk_fs_open_file_state *', 'struct nk_fs_open_file_state *', 'struct nk_fs_open_file_state *', 'struct nk_fs_open_file_state *', 'struct nk_fs_open_file_state *']}, 'param': [['fd', 'struct nk_fs_open_file_state *'], ['st', 'struct nk_fs_stat *']]}
+nk_dequeue_first: {'ret_type': 'struct nk_queue_entry *', 'typedef': {}, 'param': [['q', 'struct nk_queue *']]}
+early_acpi_os_unmap_memory: {'ret_type': 'void', 'typedef': {'size': ['acpi_size', 'long unsigned int', 'long unsigned int', 'long unsigned int']}, 'param': [['virt', 'void *'], ['size', 'long unsigned int']]}
+fgets: {'ret_type': 'char *', 'typedef': {}, 'param': [['str', 'char *'], ['n', 'int'], ['stream', 'void *']]}
+ftell: {'ret_type': 'long int', 'typedef': {}, 'param': [['x', 'void *']]}
+exit: {'ret_type': 'void', 'typedef': {}, 'param': [['status', 'int']]}
+null_excp_handler: {'ret_type': 'int', 'typedef': {'fault_addr': ['addr_t', 'long unsigned int'], 'vector': ['excp_vec_t', 'long unsigned int', 'long unsigned int']}, 'param': [['excp', 'struct excp_entry_state *'], ['vector', 'long unsigned int'], ['fault_addr', 'long unsigned int']]}
+nk_pf_handler: {'ret_type': 'int', 'typedef': {'fault_addr': ['addr_t', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int'], 'vector': ['excp_vec_t', 'long unsigned int']}, 'param': [['excp', 'struct excp_entry_state *'], ['vector', 'long unsigned int'], ['fault_addr', 'long unsigned int']]}
+vga_scrollup: {'ret_type': 'void', 'typedef': {}, 'param': []}
+nk_block_dev_deinit: {'ret_type': 'int', 'typedef': {}, 'param': []}
+nk_sched_init_ap: {'ret_type': 'int', 'typedef': {}, 'param': [['cfg', 'struct nk_sched_config *']]}
+modf: {'ret_type': 'double', 'typedef': {}, 'param': [['y', 'double'], ['x', 'double *']]}
+nk_block_dev_unregister: {'ret_type': 'int', 'typedef': {}, 'param': [['d', 'struct nk_block_dev *']]}
+serial_print: {'ret_type': 'void', 'typedef': {}, 'param': [['format', 'const char *'], ['...', '...']]}
+acpi_tb_resize_root_table_list: {'ret_type': 'unsigned int', 'typedef': {}, 'param': []}
+nk_thread_queue_wake_all: {'ret_type': 'int', 'typedef': {}, 'param': [['q', 'struct nk_queue *']]}
+gmtime: {'ret_type': 'struct tm *', 'typedef': {}, 'param': [['timer', 'const long int *']]}
+acpi_tb_verify_checksum: {'ret_type': 'unsigned int', 'typedef': {'length': ['uint32_t', 'unsigned int', 'unsigned int']}, 'param': [['table', 'struct acpi_table_header *'], ['length', 'unsigned int']]}
+setup_idt: {'ret_type': 'int', 'typedef': {}, 'param': []}
+acpi_info: {'ret_type': 'void', 'typedef': {'line_number': ['uint32_t', 'unsigned int', 'unsigned int', 'unsigned int']}, 'param': [['module_name', 'const char *'], ['line_number', 'unsigned int'], ['format', 'const char *'], ['...', '...']]}
+acpi_table_init: {'ret_type': 'int', 'typedef': {}, 'param': []}
+nk_htable_iter_search: {'ret_type': 'int', 'typedef': {'key': ['addr_t', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int']}, 'param': [['iter', 'struct nk_hashtable_iter *'], ['htable', 'struct nk_hashtable *'], ['key', 'long unsigned int']]}
+strcpy: {'ret_type': 'char *', 'typedef': {}, 'param': [['dest', 'char *'], ['src', 'const char *']]}
+__towupper_l: {'ret_type': 'int', 'typedef': {}, 'param': []}
+nk_vc_get_scancode: {'ret_type': 'short unsigned int', 'typedef': {}, 'param': [['wait', 'int']]}
+acos: {'ret_type': 'double', 'typedef': {}, 'param': [['x', 'double']]}
+nk_get_base_region_by_num: {'ret_type': 'struct mem_region *', 'typedef': {}, 'param': [['num', 'unsigned int']]}
+nk_barrier_destroy: {'ret_type': 'int', 'typedef': {}, 'param': [['barrier', 'struct nk_barrier *']]}
+setlocale: {'ret_type': 'char *', 'typedef': {}, 'param': [['category', 'int'], ['locale', 'const char *']]}
+nemo_init: {'ret_type': 'int', 'typedef': {}, 'param': []}
+smp_setup_xcall_bsp: {'ret_type': 'int', 'typedef': {}, 'param': [['core', 'struct cpu *']]}
+__fxstat64: {'ret_type': 'int', 'typedef': {}, 'param': []}
+fopen: {'ret_type': 'void *', 'typedef': {}, 'param': [['path', 'const char *'], ['f', 'void *']]}
+apic_bcast_deinit_iipi: {'ret_type': 'void', 'typedef': {}, 'param': [['apic', 'struct apic_dev *']]}
+log: {'ret_type': 'double', 'typedef': {}, 'param': [['x', 'double']]}
+nk_create_htable_iter: {'ret_type': 'struct nk_hashtable_iter *', 'typedef': {}, 'param': [['htable', 'struct nk_hashtable *']]}
+fdopen: {'ret_type': 'void *', 'typedef': {}, 'param': [['fd', 'int'], ['mode', 'const char *']]}
+acpi_os_printf: {'ret_type': 'void', 'typedef': {}, 'param': [['fmt', 'const char *'], ['...', '...']]}
+nk_alloc_timer: {'ret_type': 'struct nk_timer *', 'typedef': {}, 'param': []}
+wcslen: {'ret_type': 'int', 'typedef': {}, 'param': []}
+smp_early_init: {'ret_type': 'int', 'typedef': {}, 'param': [['naut', 'struct naut_info *']]}
+log10: {'ret_type': 'double', 'typedef': {}, 'param': [['x', 'double']]}
+nk_detect_cpu_freq: {'ret_type': 'long unsigned int', 'typedef': {'cpu': ['uint32_t', 'unsigned int']}, 'param': [['cpu', 'unsigned int']]}
+nk_switch_to_vc: {'ret_type': 'int', 'typedef': {}, 'param': [['vc', 'struct nk_virtual_console *']]}
+atox: {'ret_type': 'long unsigned int', 'typedef': {}, 'param': [['buf', 'const char *']]}
+nk_dump_numa_info: {'ret_type': 'void', 'typedef': {}, 'param': []}
+nk_free_htable: {'ret_type': 'void', 'typedef': {}, 'param': [['htable', 'struct nk_hashtable *'], ['free_values', 'int'], ['free_keys', 'int']]}
+getenv: {'ret_type': 'char *', 'typedef': {}, 'param': [['name', 'const char *']]}
+atoi: {'ret_type': 'int', 'typedef': {}, 'param': [['buf', 'const char *']]}
+pthread_mutex_unlock: {'ret_type': 'int', 'typedef': {}, 'param': []}
+nk_rb_first: {'ret_type': 'struct rb_node *', 'typedef': {}, 'param': [['root', 'struct rb_root *']]}
+reset_all_counters: {'ret_type': 'void', 'typedef': {}, 'param': []}
+nk_sched_kick_cpu: {'ret_type': 'void', 'typedef': {}, 'param': [['cpu', 'int']]}
+warn_slowpath: {'ret_type': 'void', 'typedef': {}, 'param': [['file', 'const char *'], ['line', 'int'], ['fmt', 'const char *'], ['...', '...']]}
+strspn: {'ret_type': 'long unsigned int', 'typedef': {}, 'param': [['s', 'const char *'], ['accept', 'const char *']]}
+ungetc: {'ret_type': 'int', 'typedef': {}, 'param': [['character', 'int'], ['stream', 'void *']]}
+mm_boot_init: {'ret_type': 'int', 'typedef': {'mbd': ['ulong_t', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int']}, 'param': [['mbd', 'long unsigned int']]}
+nk_vc_log: {'ret_type': 'int', 'typedef': {}, 'param': [['fmt', 'char *'], ['...', '...']]}
+nk_wait: {'ret_type': 'void', 'typedef': {'t': ['nk_thread_id_t', 'void *', 'void *', 'void *', 'void *', 'void *']}, 'param': [['t', 'void *']]}
+nk_rb_last: {'ret_type': 'struct rb_node *', 'typedef': {}, 'param': [['root', 'struct rb_root *']]}
+sscanf: {'ret_type': 'int', 'typedef': {}, 'param': [['buf', 'const char *'], ['fmt', 'const char *'], ['...', '...']]}
+release_perf_event: {'ret_type': 'void', 'typedef': {}, 'param': [['event', 'struct pmc_event *']]}
+nk_switch_to_vc_list: {'ret_type': 'int', 'typedef': {}, 'param': []}
+fread: {'ret_type': 'long unsigned int', 'typedef': {}, 'param': [['ptr', 'void *'], ['size', 'long unsigned int'], ['count', 'long unsigned int'], ['stream', 'void *']]}
+wctype: {'ret_type': 'int', 'typedef': {}, 'param': []}
+kbd_translate: {'ret_type': 'short unsigned int', 'typedef': {'scan': ['nk_scancode_t', 'short unsigned int']}, 'param': [['scan', 'short unsigned int']]}
+nk_thread_queue_create: {'ret_type': 'struct nk_queue *', 'typedef': {}, 'param': []}
+kbd_reset: {'ret_type': 'int', 'typedef': {}, 'param': []}
+nk_vc_get_keycode: {'ret_type': 'short unsigned int', 'typedef': {}, 'param': [['wait', 'int']]}
+floor: {'ret_type': 'double', 'typedef': {}, 'param': [['x', 'double']]}
+nk_sched_thread_pre_destroy: {'ret_type': 'int', 'typedef': {}, 'param': [['t', 'struct nk_thread *']]}
+gettext: {'ret_type': 'char *', 'typedef': {}, 'param': [['msgid', 'const char *']]}
+mm_boot_free_mem: {'ret_type': 'void', 'typedef': {'start': ['addr_t', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int'], 'size': ['ulong_t', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int']}, 'param': [['start', 'long unsigned int'], ['size', 'long unsigned int']]}
+multiboot_get_phys_mem: {'ret_type': 'long unsigned int', 'typedef': {'mbd': ['ulong_t', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int', 'long unsigned int']}, 'param': [['mbd', 'long unsigned int']]}
+kbd_deinit: {'ret_type': 'int', 'typedef': {}, 'param': []}
+ioapic_init: {'ret_type': 'int', 'typedef': {}, 'param': [['sys', 'struct sys_info *']]}
+arch_numa_init: {'ret_type': 'int', 'typedef': {}, 'param': [['sys', 'struct sys_info *']]}
+nk_fs_unregister: {'ret_type': 'int', 'typedef': {}, 'param': [['f', 'struct nk_fs *']]}
+kmem_get_region_by_addr: {'ret_type': 'struct mem_region *', 'typedef': {'addr': ['ulong_t', 'long unsigned int', 'long unsigned int']}, 'param': [['addr', 'long unsigned int']]}
+__ctype_toupper_loc: {'ret_type': 'int', 'typedef': {}, 'param': []}
+disable_perf_event: {'ret_type': 'void', 'typedef': {}, 'param': [['event', 'struct pmc_event *']]}
+nk_free_timer: {'ret_type': 'void', 'typedef': {}, 'param': [['t', 'struct nk_timer *']]}
+difftime: {'ret_type': 'double', 'typedef': {'time1': ['time_t', 'long int', 'long int'], 'time2': ['time_t', 'long int', 'long int']}, 'param': [['time1', 'long int'], ['time2', 'long int']]}
+acpi_error: {'ret_type': 'void', 'typedef': {'line_number': ['uint32_t', 'unsigned int', 'unsigned int', 'unsigned int']}, 'param': [['module_name', 'const char *'], ['line_number', 'unsigned int'], ['format', 'const char *'], ['...', '...']]}
+_sched_need_resched: {'ret_type': 'struct nk_thread *', 'typedef': {}, 'param': [['have_lock', 'int']]}
+time: {'ret_type': 'long int', 'typedef': {}, 'param': [['timer', 'long int *']]}
+nk_fs_creat: {'ret_type': 'struct nk_fs_open_file_state *', 'typedef': {}, 'param': [['path', 'char *'], ['mode', 'int']]}
+mbsnrtowcs: {'ret_type': 'int', 'typedef': {}, 'param': []}

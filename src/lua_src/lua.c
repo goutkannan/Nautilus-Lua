@@ -577,14 +577,16 @@ int lua_main (int argc, char **argv) {
  *
  */
 
-void handle_lua_cmd()
+void handle_lua_cmd(char* buf)
 {
 
-	  char **buff = malloc(sizeof *buff);
+	 
+	 printk("Test");
+          char **buff = malloc(sizeof *buf);
 	  
 	  char *tmp;
 	  
-	  tmp = strtok(buff, " ");
+	  tmp = strtok(buf, " ");
 	  int count=0;
 	  
 	  while(tmp !=NULL)
@@ -602,6 +604,7 @@ void handle_lua_cmd()
 		 
 	  
 	  }
+	  printk("\n %s",buff);
 	  int st = lua_main(count,buff);
 	  return 0;
 
