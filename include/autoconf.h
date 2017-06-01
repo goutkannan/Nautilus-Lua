@@ -1,11 +1,7 @@
 /*
  * Automatically generated C config: don't edit
  * Nautilus version: 
-<<<<<<< HEAD
- * Wed May 10 13:31:49 2017
-=======
- * Fri May  5 22:46:50 2017
->>>>>>> 33ed998f95f47642eeebe957323ca53a1155fb2b
+ * Wed May 31 20:04:29 2017
  */
 #define AUTOCONF_INCLUDED
 
@@ -66,13 +62,13 @@
 /*
  * Debugging
  */
-#define NAUT_CONFIG_DEBUG_INFO 1
+#undef NAUT_CONFIG_DEBUG_INFO
 #undef NAUT_CONFIG_DEBUG_PRINTS
 #undef NAUT_CONFIG_ENABLE_ASSERTS
 #undef NAUT_CONFIG_PROFILE
 #undef NAUT_CONFIG_SILENCE_UNDEF_ERR
 #undef NAUT_CONFIG_ENABLE_STACK_CHECK
-#define NAUT_CONFIG_DEBUG_VIRTUAL_CONSOLE 1
+#undef NAUT_CONFIG_DEBUG_VIRTUAL_CONSOLE
 #undef NAUT_CONFIG_DEBUG_DEV
 
 /*

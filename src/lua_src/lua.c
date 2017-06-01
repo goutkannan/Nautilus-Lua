@@ -571,6 +571,12 @@ int lua_main (int argc, char **argv) {
   return (result && status == LUA_OK) ? EXIT_SUCCESS : EXIT_FAILURE;
 }
 
+
+/*
+ * Added this function to handle the command "lua" and "lua -i"
+ *
+ */
+
 void handle_lua_cmd()
 {
 
@@ -578,7 +584,7 @@ void handle_lua_cmd()
 	  
 	  char *tmp;
 	  
-	  tmp = strtok(buf, " ");
+	  tmp = strtok(buff, " ");
 	  int count=0;
 	  
 	  while(tmp !=NULL)

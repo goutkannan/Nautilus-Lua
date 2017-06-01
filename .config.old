@@ -1,11 +1,7 @@
 #
 # Automatically generated make config: don't edit
 #Nautilus: 
-<<<<<<< HEAD
-# Wed May 10 13:30:05 2017
-=======
-# Fri May  5 22:44:32 2017
->>>>>>> 33ed998f95f47642eeebe957323ca53a1155fb2b
+# Wed May 31 20:01:36 2017
 #
 
 #
@@ -65,13 +61,13 @@ NAUT_CONFIG_FPU_SAVE=y
 #
 # Debugging
 #
-NAUT_CONFIG_DEBUG_INFO=y
+# NAUT_CONFIG_DEBUG_INFO is not set
 # NAUT_CONFIG_DEBUG_PRINTS is not set
 # NAUT_CONFIG_ENABLE_ASSERTS is not set
 # NAUT_CONFIG_PROFILE is not set
 # NAUT_CONFIG_SILENCE_UNDEF_ERR is not set
 # NAUT_CONFIG_ENABLE_STACK_CHECK is not set
-NAUT_CONFIG_DEBUG_VIRTUAL_CONSOLE=y
+# NAUT_CONFIG_DEBUG_VIRTUAL_CONSOLE is not set
 # NAUT_CONFIG_DEBUG_DEV is not set
 
 #
@@ -103,8 +99,4 @@ NAUT_CONFIG_SERIAL_PORT=1
 # Lua interpreter support 
 #
 NAUT_CONFIG_LOAD_LUA=y
-<<<<<<< HEAD
 NAUT_CONFIG_LUA_TEST=y
-=======
-# NAUT_CONFIG_LUA_TEST is not set
->>>>>>> 33ed998f95f47642eeebe957323ca53a1155fb2b

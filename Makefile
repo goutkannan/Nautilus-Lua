@@ -691,7 +691,7 @@ nautilus: $(BIN_NAME)
 #needs to be added to nautilus while building for the second time.
 
 define lua__
-	@python parse_gdb.py
+	@python scripts/parse_gdb.py
         	
 	LUA_BUILD_FLAG=1 make
 endef
